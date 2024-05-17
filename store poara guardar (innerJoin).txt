@@ -1,0 +1,19 @@
+SELECT * FROM public."Historial" ORDER BY "idContratador" ASC 
+
+SELECT 
+	"Usuarios"."nombre", 
+	"Usuarios"."apellido", 
+	"Historial"."idContratador", 
+	"Usuarios"."id", 
+	avg("Historial"."calificacion") 
+FROM public."Historial" 
+INNER JOIN  public."Usuarios" ON public."Usuarios"."id" = public."Historial"."idContratador"
+GROUP BY 
+	"Historial"."idContratador",
+	"Usuarios"."id", 
+	"Usuarios"."nombre", 
+	"Usuarios"."apellido"
+ORDER BY 
+	"Historial"."idContratador" ASC 
+
+SELECT * FROM public."Usuarios"
