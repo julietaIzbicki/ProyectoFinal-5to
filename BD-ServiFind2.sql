@@ -5,7 +5,7 @@
 -- Dumped from database version 16.2
 -- Dumped by pg_dump version 16.0
 
--- Started on 2024-05-24 11:47:22
+-- Started on 2024-06-07 11:38:17
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -18,12 +18,31 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+--
+-- TOC entry 4 (class 2615 OID 2200)
+-- Name: public; Type: SCHEMA; Schema: -; Owner: pg_database_owner
+--
+
+CREATE SCHEMA public;
+
+
+ALTER SCHEMA public OWNER TO pg_database_owner;
+
+--
+-- TOC entry 4890 (class 0 OID 0)
+-- Dependencies: 4
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: pg_database_owner
+--
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
--- TOC entry 215 (class 1259 OID 16445)
+-- TOC entry 215 (class 1259 OID 16399)
 -- Name: Categorias; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -36,7 +55,7 @@ CREATE TABLE public."Categorias" (
 ALTER TABLE public."Categorias" OWNER TO postgres;
 
 --
--- TOC entry 216 (class 1259 OID 16448)
+-- TOC entry 216 (class 1259 OID 16402)
 -- Name: Categorias_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -52,7 +71,7 @@ CREATE SEQUENCE public."Categorias_id_seq"
 ALTER SEQUENCE public."Categorias_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4881 (class 0 OID 0)
+-- TOC entry 4891 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: Categorias_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -61,7 +80,7 @@ ALTER SEQUENCE public."Categorias_id_seq" OWNED BY public."Categorias".id;
 
 
 --
--- TOC entry 233 (class 1259 OID 16531)
+-- TOC entry 217 (class 1259 OID 16403)
 -- Name: Favoritos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -75,7 +94,7 @@ CREATE TABLE public."Favoritos" (
 ALTER TABLE public."Favoritos" OWNER TO postgres;
 
 --
--- TOC entry 234 (class 1259 OID 16534)
+-- TOC entry 218 (class 1259 OID 16406)
 -- Name: Favoritos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -91,8 +110,8 @@ CREATE SEQUENCE public."Favoritos_id_seq"
 ALTER SEQUENCE public."Favoritos_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4882 (class 0 OID 0)
--- Dependencies: 234
+-- TOC entry 4892 (class 0 OID 0)
+-- Dependencies: 218
 -- Name: Favoritos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -100,7 +119,7 @@ ALTER SEQUENCE public."Favoritos_id_seq" OWNED BY public."Favoritos".id;
 
 
 --
--- TOC entry 232 (class 1259 OID 16525)
+-- TOC entry 219 (class 1259 OID 16407)
 -- Name: FotosOfrecidos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -114,7 +133,7 @@ CREATE TABLE public."FotosOfrecidos" (
 ALTER TABLE public."FotosOfrecidos" OWNER TO postgres;
 
 --
--- TOC entry 231 (class 1259 OID 16524)
+-- TOC entry 220 (class 1259 OID 16410)
 -- Name: FotosOfrecidos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -130,8 +149,8 @@ CREATE SEQUENCE public."FotosOfrecidos_id_seq"
 ALTER SEQUENCE public."FotosOfrecidos_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4883 (class 0 OID 0)
--- Dependencies: 231
+-- TOC entry 4893 (class 0 OID 0)
+-- Dependencies: 220
 -- Name: FotosOfrecidos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -139,7 +158,7 @@ ALTER SEQUENCE public."FotosOfrecidos_id_seq" OWNED BY public."FotosOfrecidos".i
 
 
 --
--- TOC entry 230 (class 1259 OID 16518)
+-- TOC entry 221 (class 1259 OID 16411)
 -- Name: Generos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -152,7 +171,7 @@ CREATE TABLE public."Generos" (
 ALTER TABLE public."Generos" OWNER TO postgres;
 
 --
--- TOC entry 229 (class 1259 OID 16517)
+-- TOC entry 222 (class 1259 OID 16414)
 -- Name: Generos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -168,8 +187,8 @@ CREATE SEQUENCE public."Generos_id_seq"
 ALTER SEQUENCE public."Generos_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4884 (class 0 OID 0)
--- Dependencies: 229
+-- TOC entry 4894 (class 0 OID 0)
+-- Dependencies: 222
 -- Name: Generos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -177,7 +196,7 @@ ALTER SEQUENCE public."Generos_id_seq" OWNED BY public."Generos".id;
 
 
 --
--- TOC entry 217 (class 1259 OID 16449)
+-- TOC entry 223 (class 1259 OID 16415)
 -- Name: Historial; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -197,7 +216,7 @@ CREATE TABLE public."Historial" (
 ALTER TABLE public."Historial" OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1259 OID 16452)
+-- TOC entry 224 (class 1259 OID 16418)
 -- Name: Historial_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -213,8 +232,8 @@ CREATE SEQUENCE public."Historial_id_seq"
 ALTER SEQUENCE public."Historial_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4885 (class 0 OID 0)
--- Dependencies: 218
+-- TOC entry 4895 (class 0 OID 0)
+-- Dependencies: 224
 -- Name: Historial_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -222,7 +241,7 @@ ALTER SEQUENCE public."Historial_id_seq" OWNED BY public."Historial".id;
 
 
 --
--- TOC entry 236 (class 1259 OID 16542)
+-- TOC entry 225 (class 1259 OID 16419)
 -- Name: Likes; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -236,7 +255,7 @@ CREATE TABLE public."Likes" (
 ALTER TABLE public."Likes" OWNER TO postgres;
 
 --
--- TOC entry 235 (class 1259 OID 16541)
+-- TOC entry 226 (class 1259 OID 16422)
 -- Name: Likes_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -252,8 +271,8 @@ CREATE SEQUENCE public."Likes_id_seq"
 ALTER SEQUENCE public."Likes_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4886 (class 0 OID 0)
--- Dependencies: 235
+-- TOC entry 4896 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: Likes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -261,7 +280,7 @@ ALTER SEQUENCE public."Likes_id_seq" OWNED BY public."Likes".id;
 
 
 --
--- TOC entry 219 (class 1259 OID 16453)
+-- TOC entry 227 (class 1259 OID 16423)
 -- Name: Ofrecidos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -270,14 +289,15 @@ CREATE TABLE public."Ofrecidos" (
     idusuario integer,
     descripcion character varying(1000),
     idcategoria integer,
-    tags character varying(250)
+    tags character varying(250),
+    precio integer
 );
 
 
 ALTER TABLE public."Ofrecidos" OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1259 OID 16458)
+-- TOC entry 228 (class 1259 OID 16428)
 -- Name: Ofrecidos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -293,8 +313,8 @@ CREATE SEQUENCE public."Ofrecidos_id_seq"
 ALTER SEQUENCE public."Ofrecidos_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4887 (class 0 OID 0)
--- Dependencies: 220
+-- TOC entry 4897 (class 0 OID 0)
+-- Dependencies: 228
 -- Name: Ofrecidos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -302,7 +322,7 @@ ALTER SEQUENCE public."Ofrecidos_id_seq" OWNED BY public."Ofrecidos".id;
 
 
 --
--- TOC entry 221 (class 1259 OID 16459)
+-- TOC entry 229 (class 1259 OID 16429)
 -- Name: Usuarios; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -322,7 +342,7 @@ CREATE TABLE public."Usuarios" (
 ALTER TABLE public."Usuarios" OWNER TO postgres;
 
 --
--- TOC entry 222 (class 1259 OID 16462)
+-- TOC entry 230 (class 1259 OID 16432)
 -- Name: Usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -338,8 +358,8 @@ CREATE SEQUENCE public."Usuarios_id_seq"
 ALTER SEQUENCE public."Usuarios_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4888 (class 0 OID 0)
--- Dependencies: 222
+-- TOC entry 4898 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: Usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -347,21 +367,21 @@ ALTER SEQUENCE public."Usuarios_id_seq" OWNED BY public."Usuarios".id;
 
 
 --
--- TOC entry 223 (class 1259 OID 16463)
--- Name: ZonaOfrecidos ; Type: TABLE; Schema: public; Owner: postgres
+-- TOC entry 231 (class 1259 OID 16433)
+-- Name: ZonaOfrecidos; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public."ZonaOfrecidos " (
+CREATE TABLE public."ZonaOfrecidos" (
     id integer NOT NULL,
     "idUsuario" integer NOT NULL,
     "idZona" integer NOT NULL
 );
 
 
-ALTER TABLE public."ZonaOfrecidos " OWNER TO postgres;
+ALTER TABLE public."ZonaOfrecidos" OWNER TO postgres;
 
 --
--- TOC entry 224 (class 1259 OID 16466)
+-- TOC entry 232 (class 1259 OID 16436)
 -- Name: ZonaTrabajador_idTrabajador_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -377,16 +397,16 @@ CREATE SEQUENCE public."ZonaTrabajador_idTrabajador_seq"
 ALTER SEQUENCE public."ZonaTrabajador_idTrabajador_seq" OWNER TO postgres;
 
 --
--- TOC entry 4889 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 4899 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: ZonaTrabajador_idTrabajador_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public."ZonaTrabajador_idTrabajador_seq" OWNED BY public."ZonaOfrecidos "."idUsuario";
+ALTER SEQUENCE public."ZonaTrabajador_idTrabajador_seq" OWNED BY public."ZonaOfrecidos"."idUsuario";
 
 
 --
--- TOC entry 225 (class 1259 OID 16467)
+-- TOC entry 233 (class 1259 OID 16437)
 -- Name: ZonaTrabajador_idZona_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -402,16 +422,16 @@ CREATE SEQUENCE public."ZonaTrabajador_idZona_seq"
 ALTER SEQUENCE public."ZonaTrabajador_idZona_seq" OWNER TO postgres;
 
 --
--- TOC entry 4890 (class 0 OID 0)
--- Dependencies: 225
+-- TOC entry 4900 (class 0 OID 0)
+-- Dependencies: 233
 -- Name: ZonaTrabajador_idZona_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public."ZonaTrabajador_idZona_seq" OWNED BY public."ZonaOfrecidos "."idZona";
+ALTER SEQUENCE public."ZonaTrabajador_idZona_seq" OWNED BY public."ZonaOfrecidos"."idZona";
 
 
 --
--- TOC entry 226 (class 1259 OID 16468)
+-- TOC entry 234 (class 1259 OID 16438)
 -- Name: ZonaTrabajador_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -427,16 +447,16 @@ CREATE SEQUENCE public."ZonaTrabajador_id_seq"
 ALTER SEQUENCE public."ZonaTrabajador_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4891 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 4901 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: ZonaTrabajador_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public."ZonaTrabajador_id_seq" OWNED BY public."ZonaOfrecidos ".id;
+ALTER SEQUENCE public."ZonaTrabajador_id_seq" OWNED BY public."ZonaOfrecidos".id;
 
 
 --
--- TOC entry 227 (class 1259 OID 16469)
+-- TOC entry 235 (class 1259 OID 16439)
 -- Name: Zonas; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -449,7 +469,7 @@ CREATE TABLE public."Zonas" (
 ALTER TABLE public."Zonas" OWNER TO postgres;
 
 --
--- TOC entry 228 (class 1259 OID 16472)
+-- TOC entry 236 (class 1259 OID 16442)
 -- Name: Zonas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -465,8 +485,8 @@ CREATE SEQUENCE public."Zonas_id_seq"
 ALTER SEQUENCE public."Zonas_id_seq" OWNER TO postgres;
 
 --
--- TOC entry 4892 (class 0 OID 0)
--- Dependencies: 228
+-- TOC entry 4902 (class 0 OID 0)
+-- Dependencies: 236
 -- Name: Zonas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -474,7 +494,7 @@ ALTER SEQUENCE public."Zonas_id_seq" OWNED BY public."Zonas".id;
 
 
 --
--- TOC entry 4672 (class 2604 OID 16473)
+-- TOC entry 4681 (class 2604 OID 16443)
 -- Name: Categorias id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -482,7 +502,7 @@ ALTER TABLE ONLY public."Categorias" ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
--- TOC entry 4682 (class 2604 OID 16535)
+-- TOC entry 4682 (class 2604 OID 16444)
 -- Name: Favoritos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -490,7 +510,7 @@ ALTER TABLE ONLY public."Favoritos" ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 4681 (class 2604 OID 16528)
+-- TOC entry 4683 (class 2604 OID 16445)
 -- Name: FotosOfrecidos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -498,7 +518,7 @@ ALTER TABLE ONLY public."FotosOfrecidos" ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 4680 (class 2604 OID 16521)
+-- TOC entry 4684 (class 2604 OID 16446)
 -- Name: Generos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -506,7 +526,7 @@ ALTER TABLE ONLY public."Generos" ALTER COLUMN id SET DEFAULT nextval('public."G
 
 
 --
--- TOC entry 4673 (class 2604 OID 16474)
+-- TOC entry 4685 (class 2604 OID 16447)
 -- Name: Historial id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -514,7 +534,7 @@ ALTER TABLE ONLY public."Historial" ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 4683 (class 2604 OID 16545)
+-- TOC entry 4686 (class 2604 OID 16448)
 -- Name: Likes id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -522,7 +542,7 @@ ALTER TABLE ONLY public."Likes" ALTER COLUMN id SET DEFAULT nextval('public."Lik
 
 
 --
--- TOC entry 4674 (class 2604 OID 16475)
+-- TOC entry 4687 (class 2604 OID 16449)
 -- Name: Ofrecidos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -530,7 +550,7 @@ ALTER TABLE ONLY public."Ofrecidos" ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 4675 (class 2604 OID 16476)
+-- TOC entry 4688 (class 2604 OID 16450)
 -- Name: Usuarios id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -538,31 +558,31 @@ ALTER TABLE ONLY public."Usuarios" ALTER COLUMN id SET DEFAULT nextval('public."
 
 
 --
--- TOC entry 4676 (class 2604 OID 16477)
--- Name: ZonaOfrecidos  id; Type: DEFAULT; Schema: public; Owner: postgres
+-- TOC entry 4689 (class 2604 OID 16451)
+-- Name: ZonaOfrecidos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."ZonaOfrecidos " ALTER COLUMN id SET DEFAULT nextval('public."ZonaTrabajador_id_seq"'::regclass);
-
-
---
--- TOC entry 4677 (class 2604 OID 16478)
--- Name: ZonaOfrecidos  idUsuario; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."ZonaOfrecidos " ALTER COLUMN "idUsuario" SET DEFAULT nextval('public."ZonaTrabajador_idTrabajador_seq"'::regclass);
+ALTER TABLE ONLY public."ZonaOfrecidos" ALTER COLUMN id SET DEFAULT nextval('public."ZonaTrabajador_id_seq"'::regclass);
 
 
 --
--- TOC entry 4678 (class 2604 OID 16479)
--- Name: ZonaOfrecidos  idZona; Type: DEFAULT; Schema: public; Owner: postgres
+-- TOC entry 4690 (class 2604 OID 16452)
+-- Name: ZonaOfrecidos idUsuario; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."ZonaOfrecidos " ALTER COLUMN "idZona" SET DEFAULT nextval('public."ZonaTrabajador_idZona_seq"'::regclass);
+ALTER TABLE ONLY public."ZonaOfrecidos" ALTER COLUMN "idUsuario" SET DEFAULT nextval('public."ZonaTrabajador_idTrabajador_seq"'::regclass);
 
 
 --
--- TOC entry 4679 (class 2604 OID 16480)
+-- TOC entry 4691 (class 2604 OID 16453)
+-- Name: ZonaOfrecidos idZona; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."ZonaOfrecidos" ALTER COLUMN "idZona" SET DEFAULT nextval('public."ZonaTrabajador_idZona_seq"'::regclass);
+
+
+--
+-- TOC entry 4692 (class 2604 OID 16454)
 -- Name: Zonas id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -570,7 +590,7 @@ ALTER TABLE ONLY public."Zonas" ALTER COLUMN id SET DEFAULT nextval('public."Zon
 
 
 --
--- TOC entry 4854 (class 0 OID 16445)
+-- TOC entry 4863 (class 0 OID 16399)
 -- Dependencies: 215
 -- Data for Name: Categorias; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -582,24 +602,24 @@ INSERT INTO public."Categorias" VALUES (4, 'Class pariculares');
 
 
 --
--- TOC entry 4872 (class 0 OID 16531)
--- Dependencies: 233
+-- TOC entry 4865 (class 0 OID 16403)
+-- Dependencies: 217
 -- Data for Name: Favoritos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 4871 (class 0 OID 16525)
--- Dependencies: 232
+-- TOC entry 4867 (class 0 OID 16407)
+-- Dependencies: 219
 -- Data for Name: FotosOfrecidos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 4869 (class 0 OID 16518)
--- Dependencies: 230
+-- TOC entry 4869 (class 0 OID 16411)
+-- Dependencies: 221
 -- Data for Name: Generos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -611,8 +631,8 @@ INSERT INTO public."Generos" VALUES (5, 'Otro');
 
 
 --
--- TOC entry 4856 (class 0 OID 16449)
--- Dependencies: 217
+-- TOC entry 4871 (class 0 OID 16415)
+-- Dependencies: 223
 -- Data for Name: Historial; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -634,35 +654,35 @@ INSERT INTO public."Historial" VALUES (15, 5, 1, '2023-01-15', true, 4, 'El cuid
 
 
 --
--- TOC entry 4875 (class 0 OID 16542)
--- Dependencies: 236
+-- TOC entry 4873 (class 0 OID 16419)
+-- Dependencies: 225
 -- Data for Name: Likes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 4858 (class 0 OID 16453)
--- Dependencies: 219
+-- TOC entry 4875 (class 0 OID 16423)
+-- Dependencies: 227
 -- Data for Name: Ofrecidos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."Ofrecidos" VALUES (1, 1, 'hage trabajos de electricidad', 2, NULL);
-INSERT INTO public."Ofrecidos" VALUES (2, 1, 'Masaje relajante para aliviar el estrés', 1, NULL);
-INSERT INTO public."Ofrecidos" VALUES (4, 3, 'Cuidado de ancianos en domicilio durante el día', 3, NULL);
-INSERT INTO public."Ofrecidos" VALUES (6, 5, 'Tratamiento facial para rejuvenecer la piel', 1, NULL);
-INSERT INTO public."Ofrecidos" VALUES (7, 6, 'Reparación de electrodomésticos en el hogar', 2, NULL);
-INSERT INTO public."Ofrecidos" VALUES (8, 7, 'Asistencia domiciliaria para personas con discapacidad', 3, NULL);
-INSERT INTO public."Ofrecidos" VALUES (9, 8, 'Clases de inglés para principiantes', 4, NULL);
-INSERT INTO public."Ofrecidos" VALUES (10, 9, 'Servicio de peluquería a domicilio', 1, NULL);
-INSERT INTO public."Ofrecidos" VALUES (11, 10, 'Reparación de techo dañado por filtraciones', 2, NULL);
-INSERT INTO public."Ofrecidos" VALUES (3, 2, 'Reparación de grifo con fugas en el baño', 2, 'agua fuga reparacion plomeria');
-INSERT INTO public."Ofrecidos" VALUES (5, 4, 'Clases particulares de matemáticas para estudiantes de secundaria', 4, 'profesora profe aprender');
+INSERT INTO public."Ofrecidos" VALUES (2, 1, 'Masaje relajante para aliviar el estrés', 1, NULL, 1900);
+INSERT INTO public."Ofrecidos" VALUES (4, 3, 'Cuidado de ancianos en domicilio durante el día', 3, NULL, 4000);
+INSERT INTO public."Ofrecidos" VALUES (6, 5, 'Tratamiento facial para rejuvenecer la piel', 1, NULL, 6000);
+INSERT INTO public."Ofrecidos" VALUES (7, 6, 'Reparación de electrodomésticos en el hogar', 2, NULL, 5000);
+INSERT INTO public."Ofrecidos" VALUES (8, 7, 'Asistencia domiciliaria para personas con discapacidad', 3, NULL, 8200);
+INSERT INTO public."Ofrecidos" VALUES (9, 8, 'Clases de inglés para principiantes', 4, NULL, 6500);
+INSERT INTO public."Ofrecidos" VALUES (10, 9, 'Servicio de peluquería a domicilio', 1, NULL, 7800);
+INSERT INTO public."Ofrecidos" VALUES (11, 10, 'Reparación de techo dañado por filtraciones', 2, NULL, 9000);
+INSERT INTO public."Ofrecidos" VALUES (3, 2, 'Reparación de grifo con fugas en el baño', 2, 'agua fuga reparacion plomeria', 8000);
+INSERT INTO public."Ofrecidos" VALUES (5, 4, 'Clases particulares de matemáticas para estudiantes de secundaria', 4, 'profesora profe aprender', 7000);
+INSERT INTO public."Ofrecidos" VALUES (1, 1, 'hage trabajos de electricidad', 2, 'fuga de electricidad', 2500);
 
 
 --
--- TOC entry 4860 (class 0 OID 16459)
--- Dependencies: 221
+-- TOC entry 4877 (class 0 OID 16429)
+-- Dependencies: 229
 -- Data for Name: Usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -684,22 +704,22 @@ INSERT INTO public."Usuarios" VALUES (15, 'pablo.lopez@example.com', 'Pablo', 'L
 
 
 --
--- TOC entry 4862 (class 0 OID 16463)
--- Dependencies: 223
--- Data for Name: ZonaOfrecidos ; Type: TABLE DATA; Schema: public; Owner: postgres
+-- TOC entry 4879 (class 0 OID 16433)
+-- Dependencies: 231
+-- Data for Name: ZonaOfrecidos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."ZonaOfrecidos " VALUES (7, 4, 1);
-INSERT INTO public."ZonaOfrecidos " VALUES (8, 2, 2);
-INSERT INTO public."ZonaOfrecidos " VALUES (9, 3, 3);
-INSERT INTO public."ZonaOfrecidos " VALUES (10, 3, 4);
-INSERT INTO public."ZonaOfrecidos " VALUES (11, 3, 1);
-INSERT INTO public."ZonaOfrecidos " VALUES (12, 4, 4);
+INSERT INTO public."ZonaOfrecidos" VALUES (7, 4, 1);
+INSERT INTO public."ZonaOfrecidos" VALUES (8, 2, 2);
+INSERT INTO public."ZonaOfrecidos" VALUES (9, 3, 3);
+INSERT INTO public."ZonaOfrecidos" VALUES (10, 3, 4);
+INSERT INTO public."ZonaOfrecidos" VALUES (11, 3, 1);
+INSERT INTO public."ZonaOfrecidos" VALUES (12, 4, 4);
 
 
 --
--- TOC entry 4866 (class 0 OID 16469)
--- Dependencies: 227
+-- TOC entry 4883 (class 0 OID 16439)
+-- Dependencies: 235
 -- Data for Name: Zonas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -737,7 +757,7 @@ INSERT INTO public."Zonas" VALUES (31, 'Monte Castro');
 
 
 --
--- TOC entry 4893 (class 0 OID 0)
+-- TOC entry 4903 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: Categorias_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -746,8 +766,8 @@ SELECT pg_catalog.setval('public."Categorias_id_seq"', 4, true);
 
 
 --
--- TOC entry 4894 (class 0 OID 0)
--- Dependencies: 234
+-- TOC entry 4904 (class 0 OID 0)
+-- Dependencies: 218
 -- Name: Favoritos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -755,8 +775,8 @@ SELECT pg_catalog.setval('public."Favoritos_id_seq"', 1, false);
 
 
 --
--- TOC entry 4895 (class 0 OID 0)
--- Dependencies: 231
+-- TOC entry 4905 (class 0 OID 0)
+-- Dependencies: 220
 -- Name: FotosOfrecidos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -764,8 +784,8 @@ SELECT pg_catalog.setval('public."FotosOfrecidos_id_seq"', 1, false);
 
 
 --
--- TOC entry 4896 (class 0 OID 0)
--- Dependencies: 229
+-- TOC entry 4906 (class 0 OID 0)
+-- Dependencies: 222
 -- Name: Generos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -773,8 +793,8 @@ SELECT pg_catalog.setval('public."Generos_id_seq"', 5, true);
 
 
 --
--- TOC entry 4897 (class 0 OID 0)
--- Dependencies: 218
+-- TOC entry 4907 (class 0 OID 0)
+-- Dependencies: 224
 -- Name: Historial_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -782,8 +802,8 @@ SELECT pg_catalog.setval('public."Historial_id_seq"', 15, true);
 
 
 --
--- TOC entry 4898 (class 0 OID 0)
--- Dependencies: 235
+-- TOC entry 4908 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: Likes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -791,8 +811,8 @@ SELECT pg_catalog.setval('public."Likes_id_seq"', 1, false);
 
 
 --
--- TOC entry 4899 (class 0 OID 0)
--- Dependencies: 220
+-- TOC entry 4909 (class 0 OID 0)
+-- Dependencies: 228
 -- Name: Ofrecidos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -800,8 +820,8 @@ SELECT pg_catalog.setval('public."Ofrecidos_id_seq"', 11, true);
 
 
 --
--- TOC entry 4900 (class 0 OID 0)
--- Dependencies: 222
+-- TOC entry 4910 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: Usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -809,8 +829,8 @@ SELECT pg_catalog.setval('public."Usuarios_id_seq"', 15, true);
 
 
 --
--- TOC entry 4901 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 4911 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: ZonaTrabajador_idTrabajador_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -818,8 +838,8 @@ SELECT pg_catalog.setval('public."ZonaTrabajador_idTrabajador_seq"', 1, false);
 
 
 --
--- TOC entry 4902 (class 0 OID 0)
--- Dependencies: 225
+-- TOC entry 4912 (class 0 OID 0)
+-- Dependencies: 233
 -- Name: ZonaTrabajador_idZona_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -827,8 +847,8 @@ SELECT pg_catalog.setval('public."ZonaTrabajador_idZona_seq"', 1, false);
 
 
 --
--- TOC entry 4903 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 4913 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: ZonaTrabajador_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -836,8 +856,8 @@ SELECT pg_catalog.setval('public."ZonaTrabajador_id_seq"', 12, true);
 
 
 --
--- TOC entry 4904 (class 0 OID 0)
--- Dependencies: 228
+-- TOC entry 4914 (class 0 OID 0)
+-- Dependencies: 236
 -- Name: Zonas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -845,7 +865,7 @@ SELECT pg_catalog.setval('public."Zonas_id_seq"', 31, true);
 
 
 --
--- TOC entry 4685 (class 2606 OID 16556)
+-- TOC entry 4694 (class 2606 OID 16456)
 -- Name: Categorias Categorias_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -854,7 +874,7 @@ ALTER TABLE ONLY public."Categorias"
 
 
 --
--- TOC entry 4701 (class 2606 OID 16558)
+-- TOC entry 4696 (class 2606 OID 16458)
 -- Name: Favoritos Favoritos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -863,7 +883,7 @@ ALTER TABLE ONLY public."Favoritos"
 
 
 --
--- TOC entry 4699 (class 2606 OID 16530)
+-- TOC entry 4698 (class 2606 OID 16460)
 -- Name: FotosOfrecidos FotosOfrecidos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -872,7 +892,7 @@ ALTER TABLE ONLY public."FotosOfrecidos"
 
 
 --
--- TOC entry 4697 (class 2606 OID 16523)
+-- TOC entry 4700 (class 2606 OID 16462)
 -- Name: Generos Generos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -881,7 +901,7 @@ ALTER TABLE ONLY public."Generos"
 
 
 --
--- TOC entry 4687 (class 2606 OID 16560)
+-- TOC entry 4702 (class 2606 OID 16464)
 -- Name: Historial Historial_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -890,7 +910,7 @@ ALTER TABLE ONLY public."Historial"
 
 
 --
--- TOC entry 4703 (class 2606 OID 16562)
+-- TOC entry 4704 (class 2606 OID 16466)
 -- Name: Likes Likes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -899,7 +919,7 @@ ALTER TABLE ONLY public."Likes"
 
 
 --
--- TOC entry 4689 (class 2606 OID 16549)
+-- TOC entry 4706 (class 2606 OID 16468)
 -- Name: Ofrecidos Ofrecidos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -908,7 +928,7 @@ ALTER TABLE ONLY public."Ofrecidos"
 
 
 --
--- TOC entry 4691 (class 2606 OID 16484)
+-- TOC entry 4708 (class 2606 OID 16470)
 -- Name: Usuarios Usuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -917,16 +937,16 @@ ALTER TABLE ONLY public."Usuarios"
 
 
 --
--- TOC entry 4693 (class 2606 OID 16564)
--- Name: ZonaOfrecidos  ZonaOfrecidos _pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 4710 (class 2606 OID 16472)
+-- Name: ZonaOfrecidos ZonaOfrecidos _pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."ZonaOfrecidos "
+ALTER TABLE ONLY public."ZonaOfrecidos"
     ADD CONSTRAINT "ZonaOfrecidos _pkey" PRIMARY KEY (id);
 
 
 --
--- TOC entry 4695 (class 2606 OID 16486)
+-- TOC entry 4712 (class 2606 OID 16474)
 -- Name: Zonas Zonas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -935,7 +955,7 @@ ALTER TABLE ONLY public."Zonas"
 
 
 --
--- TOC entry 4708 (class 2606 OID 16550)
+-- TOC entry 4715 (class 2606 OID 16475)
 -- Name: FotosOfrecidos foto_idOfrecidos; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -944,7 +964,7 @@ ALTER TABLE ONLY public."FotosOfrecidos"
 
 
 --
--- TOC entry 4704 (class 2606 OID 16509)
+-- TOC entry 4716 (class 2606 OID 16480)
 -- Name: Historial idCont_idUsario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -953,7 +973,7 @@ ALTER TABLE ONLY public."Historial"
 
 
 --
--- TOC entry 4709 (class 2606 OID 16570)
+-- TOC entry 4713 (class 2606 OID 16485)
 -- Name: Favoritos idOfre_usuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -962,7 +982,7 @@ ALTER TABLE ONLY public."Favoritos"
 
 
 --
--- TOC entry 4705 (class 2606 OID 16504)
+-- TOC entry 4717 (class 2606 OID 16490)
 -- Name: Historial idProv_idUsuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -971,7 +991,7 @@ ALTER TABLE ONLY public."Historial"
 
 
 --
--- TOC entry 4710 (class 2606 OID 16565)
+-- TOC entry 4714 (class 2606 OID 16495)
 -- Name: Favoritos idUs_usuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -980,24 +1000,24 @@ ALTER TABLE ONLY public."Favoritos"
 
 
 --
--- TOC entry 4706 (class 2606 OID 16487)
--- Name: ZonaOfrecidos  idUsuarios_usuariosId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 4718 (class 2606 OID 16500)
+-- Name: ZonaOfrecidos idUsuarios_usuariosId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."ZonaOfrecidos "
+ALTER TABLE ONLY public."ZonaOfrecidos"
     ADD CONSTRAINT "idUsuarios_usuariosId" FOREIGN KEY ("idUsuario") REFERENCES public."Usuarios"(id) NOT VALID;
 
 
 --
--- TOC entry 4707 (class 2606 OID 16492)
--- Name: ZonaOfrecidos  idZonas_zonasId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 4719 (class 2606 OID 16505)
+-- Name: ZonaOfrecidos idZonas_zonasId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public."ZonaOfrecidos "
+ALTER TABLE ONLY public."ZonaOfrecidos"
     ADD CONSTRAINT "idZonas_zonasId" FOREIGN KEY ("idZona") REFERENCES public."Zonas"(id) NOT VALID;
 
 
--- Completed on 2024-05-24 11:47:22
+-- Completed on 2024-06-07 11:38:17
 
 --
 -- PostgreSQL database dump complete
