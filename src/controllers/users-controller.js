@@ -37,19 +37,19 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { first_name, last_name, username, password } = req.body;
-    if (!first_name || !last_name) {
-        return res.status(400).send('Los campos first_name y last_name son obligatorios.');
+    let user = req.body;
+    if (!user.nombre || !user.apellido) {
+        return res.status(400).send('Los campos nombre y apellido son obligatorios.');
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(username)) {
-        return res.status(400).send('El email (username) no es válido.');
+    if (!emailRegex.test(user.email)) {
+        return res.status(400).send('El email no es válido.');
     }
-    if (password.length < 3) {
-        return res.status(400).send('El campo password debe tener al menos 3 caracteres.');
+    if (user.contrasena.length < 3) {
+        return res.status(400).send('La contrasena debe tener al menos 6 caracteres.');
     }
     try {
-        const newUser = await svc.createAsync({ first_name, last_name, username, password });
+        const newUser = await svc.createAsync(user);
         return res.status(201).send('Usuario creado exitosamente.');
     } catch (error) {
         console.error('Error al crear usuario:', error);

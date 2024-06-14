@@ -4,20 +4,15 @@ import OfrecidosService from '../services/ofrecidos-service.js';
 const router = Router();
 const svc = new OfrecidosService();
 
-router.post('/filtros', async (req, res) => {
+router.get('/filtros', async (req, res) => {
     let respuesta;
-    let filtro = req.body;
-    
-    const usarInicio = await svc.getByFilter(filtro)
+    const filtros = req.query;
+
+    const usarInicio = await svc.getByFilter(filtros)
     if (usarInicio != null){
-        respuesta = res.status(200).json(ok);
+        respuesta = res.status(200).json(usarInicio);
     } else {
-        let NoOk = {
-            success : false,
-            mensagge : "Usuario o clave invalida",
-            token : null
-        }
-        respuesta = res.status(401).send(NoOk);
+        respuesta = res.status(401).send("NoOk");
     }
     return respuesta;
 });

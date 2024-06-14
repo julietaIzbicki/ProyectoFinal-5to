@@ -6,4 +6,9 @@ export default class UsersService {
         const user = await repo.getByUsernameAsync(entity);
         return user;
     }
+    createAsync = async (entity) => {
+        const repo = new UsersRepository();
+        const user = await repo.createAsync(entity);
+        return user;
+    }
 }

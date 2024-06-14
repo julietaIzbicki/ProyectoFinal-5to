@@ -25,27 +25,39 @@ export default class UsersRepository {
         }
         return returnEntity;
     }
-/*
+
     createAsync = async (entity) => {
         let returnArray = null;
         const client = new Client(DBConfig);
         try {
             await client.connect();
-            const sql = `INSERT INTO public."Usuarios" (
-                first_name       , 
-                last_name   ,
-                username    ,
-                password   
+            const sql = `INSERT INTO public."Usuarios"(
+                email, 
+                nombre, 
+                apellido, 
+                direccion, 
+                contrasena, 
+                "idGenero", 
+                foto, 
+                "FechaNacimiento"
             ) VALUES ($1,
                 $2,
                 $3,
-                $4)`;
+                $4,
+                $5,
+                $6,
+                $7,
+                $8)`;
             const values = [
-            entity?.first_name    ??'',
-            entity?.last_name    ??'',
-            entity?.username    ??'',
-            entity?.password    ??''
-        ]
+                entity?.email ??'',
+                entity?.nombre ??'', 
+                entity?.apellido ??'', 
+                entity?.direccion ??'', 
+                entity?.contrasena ??'', 
+                entity?.idGenero ??'', 
+                entity?.foto ??'', 
+                entity?.FechaNacimiento    ??''
+            ]
             const result = await client.query(sql, values);
             await client.end();
             returnArray = result.rowCount;
@@ -54,5 +66,4 @@ export default class UsersRepository {
         }
         return returnArray;
     }
-    */
 }

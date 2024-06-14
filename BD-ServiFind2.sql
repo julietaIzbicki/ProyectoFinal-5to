@@ -5,7 +5,7 @@
 -- Dumped from database version 16.2
 -- Dumped by pg_dump version 16.0
 
--- Started on 2024-06-07 11:38:17
+-- Started on 2024-06-14 11:49:56
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -22,9 +22,6 @@ SET row_security = off;
 -- TOC entry 4 (class 2615 OID 2200)
 -- Name: public; Type: SCHEMA; Schema: -; Owner: pg_database_owner
 --
-
-CREATE SCHEMA public;
-
 
 ALTER SCHEMA public OWNER TO pg_database_owner;
 
@@ -701,6 +698,7 @@ INSERT INTO public."Usuarios" VALUES (12, 'luisa.molina@example.com', 'Luisa', '
 INSERT INTO public."Usuarios" VALUES (13, 'javier.perez@example.com', 'Javier', 'Pérez', 'Calle 30', 'contraseña', 2, 'https://thispersondoesnotexist.com/', '1984-06-25');
 INSERT INTO public."Usuarios" VALUES (14, 'elena.ruiz@example.com', 'Elena', 'Ruiz', 'Avenida 40', '12345678', 3, 'https://thispersondoesnotexist.com/', '1998-09-12');
 INSERT INTO public."Usuarios" VALUES (15, 'pablo.lopez@example.com', 'Pablo', 'López', 'Calle 50', 'abcdefgh', 4, 'https://thispersondoesnotexist.com/', '1991-03-08');
+INSERT INTO public."Usuarios" VALUES (16, 'maiukuper@gmail.com', 'maia', 'kupersmid', 'Yatay 240', 'maiukuper123', 1, '', '2007-06-08');
 
 
 --
@@ -825,7 +823,7 @@ SELECT pg_catalog.setval('public."Ofrecidos_id_seq"', 11, true);
 -- Name: Usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Usuarios_id_seq"', 15, true);
+SELECT pg_catalog.setval('public."Usuarios_id_seq"', 16, true);
 
 
 --
@@ -1017,9 +1015,8 @@ ALTER TABLE ONLY public."ZonaOfrecidos"
     ADD CONSTRAINT "idZonas_zonasId" FOREIGN KEY ("idZona") REFERENCES public."Zonas"(id) NOT VALID;
 
 
--- Completed on 2024-06-07 11:38:17
+-- Completed on 2024-06-14 11:49:56
 
 --
 -- PostgreSQL database dump complete
 --
-
