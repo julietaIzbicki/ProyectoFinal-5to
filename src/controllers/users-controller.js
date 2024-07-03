@@ -57,23 +57,4 @@ router.post('/register', async (req, res) => {
     }
 });
 
-/*
-router.post('/likes', )
-INSERT INTO public."Favoritos"("idUsuario", "idOfrecido")
-	VALUES ( 16, 4);
-	
-DELETE FROM public."Favoritos" WHERE "idUsuario" = 16 AND "idOfrecido"=4
-	
-
-SELECT * FROM public."Favoritos" WHERE "idUsuario" = 16 AND "idOfrecido"=4
-
-IF EXISTS(SELECT * FROM public."Favoritos" WHERE "idUsuario" = 16 AND "idOfrecido"=4) THEN
-	DELETE FROM public."Favoritos" WHERE "idUsuario" = 16 AND "idOfrecido"=4
-ELSE 	
-INSERT INTO public."Favoritos"("idUsuario", "idOfrecido")
-	VALUES ( 16, 4);
-END IF	
-*/
-
-
 export default router;
