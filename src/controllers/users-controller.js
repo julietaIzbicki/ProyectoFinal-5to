@@ -49,8 +49,12 @@ router.post('/register', async (req, res) => {
         return res.status(400).send('La contrasena debe tener al menos 6 caracteres.');
     }
     try {
-        const newUser = await svc.createAsync(user);
-        return res.status(201).send('Usuario creado exitosamente.');
+        const respuesta = await svc.createAsync(user);
+        if (respuesta >= 0) {
+            return res.status(201).send('Usuario creado exitosamente.');
+        }else{
+            return res.status(201).send('El usuario ya existe.');
+        }
     } catch (error) {
         console.error('Error al crear usuario:', error);
         return res.status(500).send('Error interno del servidor.');

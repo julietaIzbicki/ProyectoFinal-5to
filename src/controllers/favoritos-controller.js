@@ -8,10 +8,13 @@ router.patch('/likes/:id', AutenticationMddleware.AuthMiddleware, async (req, re
     let respuesta;
     const idUsuario = req.id_user;
     const idOfrecido = req.params.id;
-    console.log("ID de usuario y ofrecido:", idUsuario, idOfrecido);
     try {
         respuesta = await svc.createAsync(idUsuario, idOfrecido);
-        return res.status(201).send('Likeado exitosamente.');
+        if (respuesta >= 0) {
+            return res.status(201).send('Likeado exitosamente.');
+        }else{
+            return res.status(201).send('Deslikeado exitosamente.');
+        }
     } catch (error) {
         console.error('Error al likear:', error);
         return res.status(500).send('Error interno del servidor.');

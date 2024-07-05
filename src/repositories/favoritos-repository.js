@@ -4,29 +4,19 @@ const { Client, Pool } = pkg;
 
 export default class FavsRepository {
     createAsync = async (idUsuario, idOfrecido) => {
-        let returnArray = null;
+        let result = 0;
+        console.log(idUsuario, idOfrecido)
         const client = new Client(DBConfig);
-        console.log("IDs recibidos en el repositorio:", idUsuario, idOfrecido);
         try {
             await client.connect();
-            const sql = `DO $$
-                BEGIN
-                    IF EXISTS (SELECT * FROM public."Favoritos" WHERE "idUsuario" = $1 AND "idOfrecido" = $2) THEN
-                        DELETE FROM public."Favoritos" WHERE "idUsuario" = $1 AND "idOfrecido" = $2;
-                    ELSE
-                        INSERT INTO public."Favoritos"("idUsuario", "idOfrecido")
-                        VALUES ($1, $2);
-                    END IF;
-                END $$;`;
-            const values = [idUsuario, idOfrecido];
-            const result = await client.query(sql, values);  
-            returnArray = result.rowCount; 
-            console.log("Número de filas afectadas:", returnArray);
+            const sql = `CALL Likear($1, $2, $3); `;
+            const values = [idUsuario, idOfrecido, result];
+            result = await client.query(sql, values);  
         } catch (error) {
             console.error("Error en el repositorio:", error);
         } finally {
             await client.end(); 
         }
-        return returnArray;  
+        return result.rows[0].resultado;  
     }
 }

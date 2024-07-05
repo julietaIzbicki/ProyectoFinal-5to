@@ -27,43 +27,27 @@ export default class UsersRepository {
     }
 
     createAsync = async (entity) => {
-        let returnArray = null;
+        let resultado = 0;
         const client = new Client(DBConfig);
         try {
             await client.connect();
-            const sql = `INSERT INTO public."Usuarios"(
-                email, 
-                nombre, 
-                apellido, 
-                direccion, 
-                contrasena, 
-                "idGenero", 
-                foto, 
-                "FechaNacimiento"
-            ) VALUES ($1,
-                $2,
-                $3,
-                $4,
-                $5,
-                $6,
-                $7,
-                $8)`;
+            const sql = `CALL Registrarse($1, $2, $3, $4, $5, $6, $7, $8, $9);`;
             const values = [
                 entity?.email ??'',
                 entity?.nombre ??'', 
                 entity?.apellido ??'', 
                 entity?.direccion ??'', 
                 entity?.contrasena ??'', 
-                entity?.idGenero ??'', 
+                entity?.idGenero ?? 0, 
                 entity?.foto ??'', 
-                entity?.FechaNacimiento    ??''
+                entity?.FechaNacimiento    ??'2000-01-01',
+                resultado
             ]
-            const result = await client.query(sql, values);
-            await client.end();
-            returnArray = result.rowCount;
+            resultado = await client.query(sql, values);
         } catch (error) {
             console.log(error);
         }
-        return returnArray;
+        console.log(resultado.rows[0].resultado)
+        return resultado.rows[0].resultado;
     }
 }
