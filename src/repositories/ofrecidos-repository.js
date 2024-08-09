@@ -65,4 +65,29 @@ export default class OfrecidosRepository {
         }
         return returnEntity;
     }
+
+    createOfrecido = async (ofrecido) => {
+        const client = new Client(DBConfig);
+        const values = [
+            ofrecido.descripcion,
+            ofrecido.precio,
+            ofrecido.idusuario,
+            ofrecido.idcategoria,
+            ofrecido.tags
+        ];
+        const sql = `
+            INSERT INTO public."Ofrecidos" (
+                "descripcion", "precio", "idusuario", "idcategoria", "tags"
+            ) VALUES ($1, $2, $3, $4, $5) RETURNING id
+        `;
+        try {
+            await client.connect();
+            const result = await client.query(sql, values);
+            await client.end();
+            return result.rows[0].id; 
+        } catch (error) {
+            console.log('Error al insertar el ofrecido:', error);
+            return false;
+        }
+    }
 }

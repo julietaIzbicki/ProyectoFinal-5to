@@ -6,4 +6,10 @@ export default class OfrecidosService {
         const user = await repo.getByFilter(filters);
         return user;
     }
+
+    createOfrecido = async (ofrecido) => {
+        const repo = new OfrecidosRepository();
+        const newId = await repo.create(ofrecido);
+        return newId;
+    }
 }
