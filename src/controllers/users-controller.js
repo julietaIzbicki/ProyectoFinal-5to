@@ -2,7 +2,7 @@ import {Router} from 'express';
 import { parse } from 'dotenv';
 import jwt from 'jsonwebtoken';
 import UsersService from '../services/users-service.js';
-import AuthMiddleware from '../middlewares/autentication-middleware.js';
+import AutenticationMiddleware from '../middlewares/autentication-middleware.js';
 const router = Router();
 const svc = new UsersService();
 
@@ -62,6 +62,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
+/*
 router.post('/forgot-password', async (req, res) => {
     const { email } = req.body;
     if (!email) {
@@ -93,8 +94,9 @@ router.post('/reset-password', async (req, res) => {
     }
 });
 
-router.get('/protected-route', AuthMiddleware.AuthMiddleware, (req, res) => {
+router.get('/protected-route', AutenticationMiddleware.AuthMiddleware, (req, res) => {
     res.send(`Ruta protegida. ID del usuario: ${req.id_user}`);
 });
+*/
 
 export default router;

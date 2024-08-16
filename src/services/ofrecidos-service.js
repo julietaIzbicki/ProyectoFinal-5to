@@ -9,7 +9,7 @@ export default class OfrecidosService {
 
     createOfrecido = async (ofrecido) => {
         const repo = new OfrecidosRepository();
-        const newId = await repo.create(ofrecido);
+        const newId = await repo.createOfrecido(ofrecido);
         return newId;
     }
 }

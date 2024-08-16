@@ -27,17 +27,15 @@ router.post('/ofrecidos',
     body('tags').optional().isString().withMessage('Tags debe ser una cadena de texto.'),
 
     async (req, res) => {
+        let nuevoId = -1;
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-
         try {
             const nuevoOfrecido = req.body;
             nuevoOfrecido.idusuario = req.id_user; 
-
-            const nuevoId = await svc.createOfrecido(nuevoOfrecido);
-
+            nuevoId = await svc.createOfrecido(nuevoOfrecido);
             if (nuevoId) {
                 res.status(201).json({ id: nuevoId });
             } else {
@@ -47,9 +45,7 @@ router.post('/ofrecidos',
             console.error('Error al procesar la solicitud:', error);
             res.status(500).send('Error interno del servidor');
         }
-
-        return respuesta;
-
+        return nuevoId;
     }
 );
 

@@ -51,6 +51,7 @@ export default class UsersRepository {
         return resultado.rows[0].resultado;
     }
 
+/*
     savePasswordResetCode = async (email, code, expirationMillis) => {
         const client = new Client(DBConfig);
         await client.connect();
@@ -75,7 +76,7 @@ export default class UsersRepository {
         const client = new Client(DBConfig);
         await client.connect();
         try {
-            const sql = `SELECT * FROM public."PasswordResetCodes" WHERE email = $1`;
+            const sql = `SELECT * FROM public.passwordresetcodes WHERE email = $1`;
             const result = await client.query(sql, [email]);
             return result.rows[0];
         } catch (error) {
@@ -89,7 +90,7 @@ export default class UsersRepository {
         const client = new Client(DBConfig);
         await client.connect();
         try {
-            const sql = `DELETE FROM public."PasswordResetCodes" WHERE email = $1`;
+            const sql = `DELETE FROM public.passwordresetcodes WHERE email = $1`;
             await client.query(sql, [email]);
         } catch (error) {
             console.log(error);
@@ -110,4 +111,5 @@ export default class UsersRepository {
             await client.end();
         }
     }
+*/
 }
