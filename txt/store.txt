@@ -1,0 +1,77 @@
+------------------------------------------ PROCEDURE LIKES ------------------------------------------
+DROP PROCEDURE IF EXISTS Likear(INTEGER, INTEGER, OUT INTEGER);
+
+CREATE OR REPLACE PROCEDURE Likear(
+  IN idUsuario INTEGER,
+  IN idOfrecido INTEGER,
+  OUT resultado INTEGER
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    IF EXISTS (
+        SELECT 1 
+        FROM public."Favoritos" 
+        WHERE "idUsuario" = idUsuario AND "idOfrecido" = idOfrecido
+    ) THEN
+        DELETE FROM public."Favoritos" 
+        WHERE "idUsuario" = idUsuario AND "idOfrecido" = idOfrecido;
+        
+        resultado := -1; -- Indicar que se eliminó el registro existente
+
+    ELSE
+        INSERT INTO public."Favoritos"("idUsuario", "idOfrecido")
+        VALUES (idUsuario, idOfrecido);
+
+        resultado := 1; -- Indicar que se insertó un nuevo registro
+    END IF;
+END;
+$$;
+
+------------------------------------------ PROCEDURE REGISTRARSE ------------------------------------------
+DROP PROCEDURE IF EXISTS registrarse(character varying, character varying, character varying, character varying, character varying, integer, character varying, date);
+CREATE OR REPLACE PROCEDURE Registrarse(
+    IN p_email character varying,
+    IN p_nombre character varying,
+    IN p_apellido character varying,
+    IN p_direccion character varying,
+    IN p_contrasena character varying,
+    IN p_idGenero integer,
+    IN p_foto character varying,
+    IN p_fechaNacimiento date,
+    OUT p_resultado INTEGER
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    IF EXISTS (
+        SELECT 1 
+        FROM public."Usuarios" 
+        WHERE "email" = p_email
+    ) THEN
+        p_resultado := -1; -- Indicar que ya existe
+    ELSE
+        INSERT INTO public."Usuarios"(
+            email, 
+            nombre, 
+            apellido, 
+            direccion, 
+            contrasena, 
+            "idGenero", 
+            foto, 
+            "FechaNacimiento"
+        ) VALUES (
+            p_email,
+            p_nombre,
+            p_apellido,
+            p_direccion,
+            p_contrasena,
+            p_idGenero,
+            p_foto,
+            p_fechaNacimiento
+        );
+
+        p_resultado := 1; -- Indicar que se insertó un nuevo registro
+    END IF;
+END;
+$$;

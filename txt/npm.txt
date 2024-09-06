@@ -1,0 +1,11 @@
+npm i
+npm i axios
+npm i cors
+npm i dotenv
+npm i express
+npm i express-validator
+npm i jsonwebtoken
+npm i next
+npm i node
+npm i nodemon
+npm i pg

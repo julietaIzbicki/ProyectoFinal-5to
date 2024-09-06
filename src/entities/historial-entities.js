@@ -3,10 +3,12 @@ class Historial{
     idProveedor;
     idContratador;
     fecha;
-    realizado;
     calificacionProveedor;
     resenaProveedor;
     calificacionContratador;
     resenaContratador;
+    idEstado;
+    descripcionEstado;
+    fechaCambioEstado;
 }
 export default Historial;

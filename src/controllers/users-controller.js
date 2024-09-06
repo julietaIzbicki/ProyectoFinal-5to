@@ -62,41 +62,4 @@ router.post('/register', async (req, res) => {
     }
 });
 
-/*
-router.post('/forgot-password', async (req, res) => {
-    const { email } = req.body;
-    if (!email) {
-        return res.status(400).send('El campo email es obligatorio.');
-    }
-
-    try {
-        await svc.requestPasswordReset(email);
-        return res.status(200).send('Se ha enviado un correo con el código de verificación.');
-    } catch (error) {
-        console.error('Error al solicitar el código de verificación:', error);
-        return res.status(500).send('Error al procesar la solicitud.');
-    }
-});
-
-router.post('/reset-password', async (req, res) => {
-    const { email, code, newPassword } = req.body;
-    if (!email || !code || !newPassword) {
-        return res.status(400).send('El email, el código y la nueva contraseña son obligatorios.');
-    }
-
-    try {
-        await svc.verifyCode(email, code);
-        await svc.resetPassword(email, newPassword);
-        return res.status(200).send('Contraseña restablecida con éxito.');
-    } catch (error) {
-        console.error('Error al restablecer la contraseña:', error);
-        return res.status(400).send('Código inválido o expirado.');
-    }
-});
-
-router.get('/protected-route', AutenticationMiddleware.AuthMiddleware, (req, res) => {
-    res.send(`Ruta protegida. ID del usuario: ${req.id_user}`);
-});
-*/
-
 export default router;
