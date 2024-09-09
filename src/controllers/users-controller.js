@@ -51,10 +51,11 @@ router.post('/register', async (req, res) => {
     }
     try {
         const respuesta = await svc.createAsync(user);
+        console.log(respuesta, "controller");
         if (respuesta >= 0) {
             return res.status(201).send('Usuario creado exitosamente.');
         }else{
-            return res.status(201).send('El usuario ya existe.');
+            return res.status(400).send('El usuario ya existe.');
         }
     } catch (error) {
         console.error('Error al crear usuario:', error);

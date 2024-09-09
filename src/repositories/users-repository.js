@@ -31,7 +31,7 @@ export default class UsersRepository {
         const client = new Client(DBConfig);
         try {
             await client.connect();
-            const sql = `CALL Registrarse($1, $2, $3, $4, $5, $6, $7, $8, $9);`;
+            const sql = `CALL public.registrarse($1, $2, $3, $4, $5, $6, $7, $8, $9);`;
             const values = [
                 entity?.email ??'',
                 entity?.nombre ??'', 
@@ -47,7 +47,7 @@ export default class UsersRepository {
         } catch (error) {
             console.log(error);
         }
-        console.log(resultado.rows[0].resultado)
-        return resultado.rows[0].resultado;
+        console.log(resultado.rows[0].p_resultado, "repooo")
+        return resultado.rows[0].p_resultado;
     }
 }

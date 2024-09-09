@@ -12,6 +12,7 @@ export default class UsersService {
     createAsync = async (entity) => {
         const repo = new UsersRepository();
         const user = await repo.createAsync(entity);
+        console.log(user, "svc")
         return user;
     }
 }
