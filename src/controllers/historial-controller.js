@@ -1,24 +1,29 @@
 import { Router } from 'express';
-import jwt from 'jsonwebtoken';
-import { body, validationResult } from 'express-validator';
 import AutenticationMiddleware from '../middlewares/autentication-middleware.js';
 import historialService from '../services/historial-service.js';
 
 const router = Router();
 const svc = new historialService();
 
-router.post('/historial', AutenticationMiddleware.AuthMiddleware,
+router.post('/historial', 
+    AutenticationMiddleware.AuthMiddleware,
     async (req, res) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
+        const nuevoHistorial = {
+            idPublicacion: req.body.idPublicacion, 
+            idProveedor: req.body.idProveedor, 
+            idContratador: req.id_user, 
+            fechaReservada: req.body.fechaReservada, 
+            idEstado: req.body.idEstado 
+        };
+
         try {
-            const nuevoId = await svc.createHistorial(nuevoHistorial);
-            if (nuevoId) {
-                res.status(201).json({ id: nuevoId });
+            const resultado = await svc.createHistorial(nuevoHistorial);
+            if (resultado === 1) {
+                res.status(201).json({ message: 'Historial creado exitosamente' });
+            } else if (resultado === -1) {
+                res.status(400).json({ message: 'La reserva ya existe' });
             } else {
-                res.status(400).send('Error al insertar el ofrecido');
+                res.status(400).json({ message: 'Error al intentar crear el historial' });
             }
         } catch (error) {
             console.error('Error al procesar la solicitud:', error);
