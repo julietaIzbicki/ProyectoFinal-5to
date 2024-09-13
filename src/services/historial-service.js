@@ -5,5 +5,12 @@ export default class HistorialService {
         const repo = new HistorialRepository();
         const resultado = await repo.createAsync(historial); 
         return resultado;
-    }
+    };
+
+    postResena = async (nuevaResena) => {
+        const repo = new HistorialRepository();
+        const resultado = await repo.postResena(nuevaResena); 
+        return resultado;
+    };
+      
 }
