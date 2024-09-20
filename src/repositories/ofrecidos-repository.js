@@ -12,6 +12,7 @@ export default class OfrecidosRepository {
     let miQuery = `SELECT 
         public."Ofrecidos"."id",
         public."Ofrecidos"."idusuario",
+        public."Ofrecidos"."titulo",
         public."Ofrecidos"."descripcion",
         public."Ofrecidos"."precio",
         public."FotosOfrecidos"."foto",
