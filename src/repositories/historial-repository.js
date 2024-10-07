@@ -54,13 +54,12 @@ export default class HistorialRepository {
       await client.end();
     }
     return resultado;
-  };
-}
-
-getByFecha = async (fechaInicio, fechaFin) => {
-  const client = new Client(DBConfig);
-  let historiales = [];
-  try {
+  }; 
+  
+  getByFecha = async (fechaInicio, fechaFin) => {
+    const client = new Client(DBConfig);
+    let historiales = [];
+    try {
       await client.connect();
       const sql = `
         SELECT * FROM public."Historial"
@@ -69,11 +68,15 @@ getByFecha = async (fechaInicio, fechaFin) => {
       const values = [fechaInicio, fechaFin];
       const result = await client.query(sql, values);
       historiales = result.rows;
-  } catch (error) {
+    } catch (error) {
       console.error('Error al consultar el historial por fecha:', error);
-  } finally {
+    } finally {
       await client.end();
-  }
-  return historiales;
-};
+    }
+    return historiales;
+  };
+}
+  
+  // Método para obtener historial por fechas
+ 
 
