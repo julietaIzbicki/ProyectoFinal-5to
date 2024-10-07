@@ -13,10 +13,11 @@ export default class HistorialService {
         return resultado;
     };
       
-    getByFecha = async (fechaInicio, fechaFin) => {
+    getHistorialPorFecha = async (fecha) => {
         const repo = new HistorialRepository();
-        const historiales = await repo.getByFecha(fechaInicio, fechaFin);
+        const historiales = await repo.getByFecha(fecha);
         return historiales;
-    };
+      };
+      
     
 }

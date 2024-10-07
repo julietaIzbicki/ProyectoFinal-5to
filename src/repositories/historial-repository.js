@@ -56,16 +56,16 @@ export default class HistorialRepository {
     return resultado;
   }; 
   
-  getByFecha = async (fechaInicio, fechaFin) => {
+  getByFecha = async (fecha) => {
     const client = new Client(DBConfig);
     let historiales = [];
     try {
       await client.connect();
       const sql = `
         SELECT * FROM public."Historial"
-        WHERE "fechaReservada" BETWEEN $1 AND $2;
+        WHERE "fechaReservada" = $1;
       `;
-      const values = [fechaInicio, fechaFin];
+      const values = [fecha];
       const result = await client.query(sql, values);
       historiales = result.rows;
     } catch (error) {
@@ -75,8 +75,7 @@ export default class HistorialRepository {
     }
     return historiales;
   };
-}
   
-  // Método para obtener historial por fechas
+}
  
 
