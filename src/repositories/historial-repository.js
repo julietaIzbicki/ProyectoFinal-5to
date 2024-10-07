@@ -66,6 +66,7 @@ export default class HistorialRepository {
         WHERE "fechaReservada" = $1;
       `;
       const values = [fecha];
+      console.log()
       const result = await client.query(sql, values);
       historiales = result.rows;
     } catch (error) {
