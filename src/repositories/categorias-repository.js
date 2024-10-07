@@ -15,6 +15,6 @@ export default class categoriasRepository {
         } finally {
             await client.end(); 
         }
-        return result.rows;  
+        return result;  
     }
 }

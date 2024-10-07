@@ -7,7 +7,7 @@ const svc = new CategoriasService();
 router.get('/', async (req, res) => {  
     try {
         const categorias = await svc.getCategorias();
-        if (categorias) {
+        if (categorias.rows > 0) {
             return res.status(200).json(categorias);
         } else {
             return res.status(401).send("NoOk");
