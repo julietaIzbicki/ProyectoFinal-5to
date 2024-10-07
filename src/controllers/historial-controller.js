@@ -5,6 +5,19 @@ import historialService from '../services/historial-service.js';
 const router = Router();
 const svc = new historialService();
 
+
+router.get('/historial', AutenticationMiddleware.AuthMiddleware, async (req, res) => {
+    const { fechaInicio, fechaFin } = req.query;
+    try {
+        const historiales = await svc.getHistorialPorFecha(fechaInicio, fechaFin);
+        res.status(200).json(historiales);
+    } catch (error) {
+        console.error('Error al obtener el historial:', error);
+        res.status(500).send('Error interno del servidor');
+    }
+});
+
+
 router.post('/historial', 
     AutenticationMiddleware.AuthMiddleware,
     async (req, res) => {
