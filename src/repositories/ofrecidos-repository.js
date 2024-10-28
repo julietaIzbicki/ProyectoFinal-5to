@@ -70,6 +70,29 @@ export default class OfrecidosRepository {
     return returnEntity;
   };
 
+  getById = async (id) => {
+    console.log('Buscando Ofrecido con ID:', id);
+
+    let returnEntity = null;
+    const client = new Client(DBConfig);
+    await client.connect();
+    const values = [id];
+    let miQuery = `SELECT * FROM public."Ofrecidos" WHERE id=$1`;
+    
+    try {
+        const result = await client.query(miQuery, values);
+        returnEntity = result.rows;
+    } catch (error) {
+        console.log(error);
+        returnEntity = false;
+    } finally {
+        await client.end(); 
+    }
+    console.log(returnEntity)
+    return returnEntity;
+};
+
+
   createOfrecido = async (ofrecido) => {
     const client = new Client(DBConfig);
     const values = [

@@ -18,6 +18,19 @@ router.get('/filtros', async (req, res) => {
     }
     return respuesta;
 });
+
+router.get('/id/:id', async (req, res) => {
+    let respuesta;
+    let id = req.params;
+    const getId = await svc.getById(id)
+    if (getId != null){
+        respuesta = res.status(200).json(getId);
+    } else {
+        respuesta = res.status(401).send("NoOk");
+    }
+    return respuesta;
+})
+
 router.post('/ofrecidos',
     AutenticationMiddleware.AuthMiddleware, 
 
