@@ -25,7 +25,7 @@ router.post('/historial',
     async (req, res) => {
         const nuevoHistorial = {
             idPublicacion: req.body.idPublicacion, 
-            idProveedor: req.body.idProveedor, 
+            idOffer: req.body.idOffer,  // Cambiado de idProveedor a idOffer
             idContratador: req.id_user, 
             fechaReservada: req.body.fechaReservada, 
             idEstado: req.body.idEstado 
@@ -45,6 +45,7 @@ router.post('/historial',
         }
     }
 );
+
 
 router.post('/resena', AutenticationMiddleware.AuthMiddleware,
     async (req, res) =>{

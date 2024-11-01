@@ -12,7 +12,7 @@ export default class HistorialRepository {
       const sql = `CALL public."Reserva"($1, $2, $3, $4, $5, $6);`;
       const values = [
         entity.idPublicacion ?? 0,
-        entity.idProveedor ?? 0,
+        entity.idOffer ?? 0,  // Cambiado de idProveedor a idOffer
         entity.idContratador ?? 0,
         entity.fechaReservada ?? null,
         entity.idEstado ?? 0,
