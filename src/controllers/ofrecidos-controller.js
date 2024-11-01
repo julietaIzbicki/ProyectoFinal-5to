@@ -9,7 +9,7 @@ const svc = new OfrecidosService();
 router.get('/filtros', async (req, res) => {
     let respuesta;
     const filtros = req.query;
-    //console.log("fffffff")
+    console.log("fffffff",filtros)
     const usarInicio = await svc.getByFilter(filtros)
     //console.log("usarInicio", usarInicio)    
     if (usarInicio != null){

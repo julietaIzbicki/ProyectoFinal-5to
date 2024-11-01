@@ -4,9 +4,12 @@ const { Client, Pool } = pkg;
 
 export default class OfrecidosRepository {
   getByFilter = async (filters) => {
-    let returnEntity = null;
+    let returnEntity = [];
     const client = new Client(DBConfig);
     const values = [];
+
+
+    console.log('filters:', filters)
     let i = 1;
     await client.connect();
     let miQuery = `SELECT 
@@ -60,13 +63,17 @@ export default class OfrecidosRepository {
     }
     try {
       const sql = miQuery;
-      //console.log(sql);
+      console.log(sql);
+      console.log('values', values);
       const result = await client.query(sql, values);
       await client.end();
       returnEntity = result.rows;
+      //console.log('returnEntity', returnEntity);
+      
+      
     } catch (error) {
       console.log(error);
-      returnEntity = false;
+      //returnEntity = false;
     }
     return returnEntity;
   };
