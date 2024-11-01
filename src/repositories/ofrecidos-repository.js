@@ -11,7 +11,7 @@ export default class OfrecidosRepository {
     await client.connect();
     let miQuery = `SELECT 
         public."Ofrecidos"."id",
-        public."Ofrecidos"."idusuario",
+        public."Ofrecidos"."idProveedor",
         public."Ofrecidos"."titulo",
         public."Ofrecidos"."descripcion",
         public."Ofrecidos"."precio",
@@ -19,8 +19,8 @@ export default class OfrecidosRepository {
         COALESCE(AVG(public."Historial"."calificacionProveedor"), 0) AS promedio_calificacion
             FROM public."Ofrecidos"
             LEFT JOIN public."FotosOfrecidos" ON public."FotosOfrecidos"."idOfrecido" = public."Ofrecidos"."id"
-            LEFT JOIN public."Historial" ON public."Historial"."idProveedor" = public."Ofrecidos"."idusuario"
-            LEFT JOIN public."ZonaOfrecidos" ON public."ZonaOfrecidos"."idUsuario" = public."Ofrecidos"."idusuario"
+            LEFT JOIN public."Historial" ON public."Historial"."idOffer" = public."Ofrecidos"."idProveedor"
+            LEFT JOIN public."ZonaOfrecidos" ON public."ZonaOfrecidos"."idUsuario" = public."Ofrecidos"."idProveedor"
             LEFT JOIN public."Zonas" ON public."Zonas"."id" = public."ZonaOfrecidos"."idZona"
             LEFT JOIN public."Categorias" ON public."Categorias"."id" = public."Ofrecidos"."idcategoria"
         WHERE 1=1 `;
@@ -60,6 +60,7 @@ export default class OfrecidosRepository {
     }
     try {
       const sql = miQuery;
+      //console.log(sql);
       const result = await client.query(sql, values);
       await client.end();
       returnEntity = result.rows;
@@ -98,13 +99,13 @@ export default class OfrecidosRepository {
     const values = [
       ofrecido.descripcion,
       ofrecido.precio,
-      ofrecido.idusuario,
+      ofrecido.idProveedor,
       ofrecido.idcategoria,
       ofrecido.tags,
     ];
     const sql = `
             INSERT INTO public."Ofrecidos" (
-                "descripcion", "precio", "idusuario", "idcategoria", "tags"
+                "descripcion", "precio", "idProveedor", "idcategoria", "tags"
             ) VALUES ($1, $2, $3, $4, $5) RETURNING id
         `;
     try {

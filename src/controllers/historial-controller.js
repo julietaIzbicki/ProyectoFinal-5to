@@ -30,6 +30,7 @@ router.post('/historial',
             fechaReservada: req.body.fechaReservada, 
             idEstado: req.body.idEstado 
         };
+        console.log('nuevoHistorial', nuevoHistorial);
         try {
             const resultado = await svc.createHistorial(nuevoHistorial);
             if (resultado === 1) {
