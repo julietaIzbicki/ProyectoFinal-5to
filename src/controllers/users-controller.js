@@ -51,7 +51,6 @@ router.post('/register', async (req, res) => {
     }
     try {
         const respuesta = await svc.createAsync(user);
-        console.log(respuesta, "controller");
         if (respuesta >= 0) {
             return res.status(201).send('Usuario creado exitosamente.');
         }else{

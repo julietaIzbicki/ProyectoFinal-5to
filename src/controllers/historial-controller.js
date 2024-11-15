@@ -8,7 +8,6 @@ const svc = new historialService();
 
 router.get('/historial', AutenticationMiddleware.AuthMiddleware, async (req, res) => {
     const { fecha } = req.query;
-    console.log('getHistorialPorFecha', fecha)
     try {
         const historiales = await svc.getHistorialPorFecha(fecha);
         res.status(200).json(historiales);
@@ -30,7 +29,6 @@ router.post('/historial',
             fechaReservada: req.body.fechaReservada, 
             idEstado: req.body.idEstado 
         };
-        console.log('nuevoHistorial', nuevoHistorial);
         try {
             const resultado = await svc.createHistorial(nuevoHistorial);
             if (resultado === 1) {

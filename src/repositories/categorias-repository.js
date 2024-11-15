@@ -4,7 +4,6 @@ const { Client, Pool } = pkg;
 
 export default class categoriasRepository {
     getCategorias = async () => {
-        console.log("aaaaaaaaaaaaaaaaa")
         const client = new Client(DBConfig);
         let returnValue = [];
         let result;

@@ -7,9 +7,6 @@ export default class OfrecidosRepository {
     let returnEntity = [];
     const client = new Client(DBConfig);
     const values = [];
-
-
-    console.log('filters:', filters)
     let i = 1;
     await client.connect();
     let miQuery = `SELECT 
@@ -22,7 +19,7 @@ export default class OfrecidosRepository {
         COALESCE(AVG(public."Historial"."calificacionProveedor"), 0) AS promedio_calificacion
             FROM public."Ofrecidos"
             LEFT JOIN public."FotosOfrecidos" ON public."FotosOfrecidos"."idOfrecido" = public."Ofrecidos"."id"
-            LEFT JOIN public."Historial" ON public."Historial"."idOffer" = public."Ofrecidos"."idProveedor"
+            LEFT JOIN public."Historial" ON public."Historial"."idProveedor" = public."Ofrecidos"."idProveedor"
             LEFT JOIN public."ZonaOfrecidos" ON public."ZonaOfrecidos"."idUsuario" = public."Ofrecidos"."idProveedor"
             LEFT JOIN public."Zonas" ON public."Zonas"."id" = public."ZonaOfrecidos"."idZona"
             LEFT JOIN public."Categorias" ON public."Categorias"."id" = public."Ofrecidos"."idcategoria"
@@ -63,23 +60,17 @@ export default class OfrecidosRepository {
     }
     try {
       const sql = miQuery;
-      console.log(sql);
-      console.log('values', values);
       const result = await client.query(sql, values);
       await client.end();
-      returnEntity = result.rows;
-      //console.log('returnEntity', returnEntity);
-      
+      returnEntity = result.rows;      
       
     } catch (error) {
       console.log(error);
-      //returnEntity = false;
     }
     return returnEntity;
   };
 
   getById = async (id) => {
-    console.log('Buscando Ofrecido con ID:', id);
 
     let returnEntity = null;
     const client = new Client(DBConfig);
@@ -96,7 +87,6 @@ export default class OfrecidosRepository {
     } finally {
         await client.end(); 
     }
-    console.log(returnEntity)
     return returnEntity;
 };
 

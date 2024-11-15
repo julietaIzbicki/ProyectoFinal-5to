@@ -47,7 +47,6 @@ export default class UsersRepository {
         } catch (error) {
             console.log(error);
         }
-        console.log(resultado.rows[0].p_resultado, "repooo")
         return resultado.rows[0].p_resultado;
     }
 }

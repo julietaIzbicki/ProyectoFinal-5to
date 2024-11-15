@@ -6,7 +6,6 @@ const svc = new CategoriasService();
 
 router.get('/', async (req, res) => {  
     try {
-        console.log("bbbbbbbbbbbbb")
         const categorias = await svc.getCategorias();
         if (categorias.length > 0) {
             return res.status(200).json(categorias);

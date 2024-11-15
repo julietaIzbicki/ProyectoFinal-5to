@@ -33,10 +33,6 @@ export default class HistorialRepository {
   postResena = async (entity) => {
     let resultado = 0;
     const client = new Client(DBConfig);
-    console.log("REPOOO", entity);
-    console.log(entity.idPublicacion.type, entity.comentario, entity.tipo)
-
-    //// Error al llamar al procedimiento almacenado: error: no existe el procedimiento «public.Resena(unknown, unknown, unknown, unknown)»
     try {
         await client.connect();
         const sql = `CALL public."Resena"($1, $2, $3, $4);`;
@@ -48,7 +44,6 @@ export default class HistorialRepository {
       ];
       const result = await client.query(sql, values);
       resultado = result.rows[0]?.resultado ?? 0;
-      console.log("Resultado del procedimiento:", resultado);
     } catch (error) {
       console.error("Error al llamar al procedimiento almacenado:", error);
     } finally {
@@ -67,7 +62,6 @@ export default class HistorialRepository {
         WHERE "fechaReservada" = $1;
       `;
       const values = [fecha];
-      console.log()
       const result = await client.query(sql, values);
       historiales = result.rows;
     } catch (error) {
