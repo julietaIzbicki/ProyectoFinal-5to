@@ -9,14 +9,14 @@ export default class HistorialRepository {
 
     try {
       await client.connect();
-      const sql = `SELECT * FROM public."Reserva"($1, $2, $3, $4, $5, $6);`;
+      const sql = 'CALL public."reserva"($1, $2, $3, $4, $5, $6);';
       const values = [
           entity.idPublicacion ?? 0,
           entity.idOffer ?? 0,
           entity.idContratador ?? 0,
           entity.fechaReservada ?? null,
           entity.idEstado ?? 0,
-          resultado
+          resultado, 
       ];
       
       const result = await client.query(sql, values);

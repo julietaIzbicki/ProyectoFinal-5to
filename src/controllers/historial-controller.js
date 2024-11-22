@@ -17,14 +17,12 @@ router.get('/historial', AutenticationMiddleware.AuthMiddleware, async (req, res
     }
 });
 
-
-
 router.post('/historial', 
     AutenticationMiddleware.AuthMiddleware,
     async (req, res) => {
         const nuevoHistorial = {
             idPublicacion: req.body.idPublicacion, 
-            idOffer: req.body.idOffer,  // Cambiado de idProveedor a idOffer
+            idOffer: req.body.idOffer,  
             idContratador: req.id_user, 
             fechaReservada: req.body.fechaReservada, 
             idEstado: req.body.idEstado 
@@ -32,11 +30,11 @@ router.post('/historial',
         try {
             const resultado = await svc.createHistorial(nuevoHistorial);
             if (resultado === 1) {
+                res.status(200).json({ message: 'Historial actualizado exitosamente' });
+            } else if (resultado === 2) {
                 res.status(201).json({ message: 'Historial creado exitosamente' });
-            } else if (resultado === -1) {
-                res.status(400).json({ message: 'La reserva ya existe' });
             } else {
-                res.status(400).json({ message: 'Error al intentar crear el historial' });
+                res.status(500).json({ message: 'Error al intentar crear o actualizar el historial' });
             }
         } catch (error) {
             console.error('Error al procesar la solicitud:', error);
