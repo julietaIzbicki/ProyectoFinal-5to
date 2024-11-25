@@ -5,7 +5,7 @@
 -- Dumped from database version 16.2
 -- Dumped by pg_dump version 16.0
 
--- Started on 2024-11-22 11:41:02
+-- Started on 2024-11-25 09:48:19
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -230,7 +230,8 @@ CREATE TABLE public."Historial" (
     "calificacionContratador" integer,
     "resenaContratador" character varying(150),
     "idEstado" integer,
-    "fechaCambioEstado" date
+    "fechaCambioEstado" date,
+    "idPublicacion" integer
 );
 
 
@@ -717,31 +718,20 @@ INSERT INTO public."Generos" VALUES (5, 'Otro');
 -- Data for Name: Historial; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."Historial" VALUES (4, 4, 5, '2023-01-04', 2, 'La reparación del electrodoméstico tardó un poco más de lo esperado.', 3, 'Cliente comprensivo', 3, NULL);
-INSERT INTO public."Historial" VALUES (6, 3, 2, '2023-01-06', 3, 'Excelentes clases de inglés, aprendí mucho.', 2, 'Cliente insatisfecho', 3, NULL);
-INSERT INTO public."Historial" VALUES (7, 2, 1, '2023-01-07', 5, 'Me encantó el servicio de peluquería en casa.', 4, 'Cliente cordial', 2, NULL);
-INSERT INTO public."Historial" VALUES (10, 3, 5, '2023-01-10', 3, 'La reparación del grifo no fue del todo satisfactoria.', 2, 'Cliente insatisfecho', 3, NULL);
-INSERT INTO public."Historial" VALUES (12, 2, 3, '2023-01-12', 4, 'Las clases de matemáticas fueron geniales, el profesor explicaba muy bien.', 5, 'Cliente satisfecho', 3, NULL);
-INSERT INTO public."Historial" VALUES (5, 5, 3, '2023-01-05', 4, 'Muy buen servicio de asistencia domiciliaria.', 4, 'Cliente cordial', 4, NULL);
-INSERT INTO public."Historial" VALUES (9, 4, 2, '2023-01-09', 4, 'El masaje fue increíble, definitivamente lo recomendaría.', 5, 'Cliente satisfecho', 4, NULL);
-INSERT INTO public."Historial" VALUES (11, 5, 1, '2023-01-11', 5, 'El cuidado de mi abuela fue excelente, gracias por su atención.', 5, 'Cliente satisfecho', 4, NULL);
-INSERT INTO public."Historial" VALUES (3, 3, 4, '2023-01-03', 5, 'El tratamiento facial me dejó la piel muy suave.', 5, 'Cliente satisfecho', 4, NULL);
-INSERT INTO public."Historial" VALUES (8, 1, 4, '2023-01-08', 2, 'Nuevo comentario para el proveedor', 3, 'Nuevo comentario para el contratador', 3, NULL);
-INSERT INTO public."Historial" VALUES (13, 1, 5, '2023-01-13', 3, 'Nuevo comentario para el proveedor', 4, 'Nuevo comentario para el contratador', 4, NULL);
-INSERT INTO public."Historial" VALUES (2, 2, 3, '2023-01-02', 3, 'Las clases de matemáticas fueron muy útiles.', 4, 'Nuevo comentario para el contratador', 4, NULL);
-INSERT INTO public."Historial" VALUES (1, 1, 2, '2023-01-01', 4, 'Comentario actualizado', 5, 'Nuevo comentario para el contratador', 4, NULL);
-INSERT INTO public."Historial" VALUES (21, 10, 41, '2024-09-15', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO public."Historial" VALUES (14, 3, 2, '2024-11-01', 2, 'La reparación del techo fue aceptable, pero podría mejorar en algunos detalles.', 3, 'Cliente comprensivo', 3, NULL);
-INSERT INTO public."Historial" VALUES (15, 5, 1, '2024-11-04', 4, 'El cuidado de mi abuela fue excelente, gracias por su atención.', 4, 'Cliente cordial', 4, NULL);
-INSERT INTO public."Historial" VALUES (19, 10, 41, '2024-11-05', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO public."Historial" VALUES (20, 10, 41, '2024-11-07', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO public."Historial" VALUES (22, 11, 5, '2024-09-15', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO public."Historial" VALUES (25, 0, 41, NULL, NULL, NULL, NULL, NULL, 0, NULL);
-INSERT INTO public."Historial" VALUES (26, 0, 41, NULL, NULL, NULL, NULL, NULL, 0, NULL);
-INSERT INTO public."Historial" VALUES (27, 0, 41, NULL, NULL, NULL, NULL, NULL, 0, NULL);
-INSERT INTO public."Historial" VALUES (28, 25, 16, '2024-11-29', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO public."Historial" VALUES (29, 6, 16, '2024-12-30', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO public."Historial" VALUES (30, 6, 16, '2024-12-22', NULL, NULL, NULL, NULL, 1, NULL);
+INSERT INTO public."Historial" VALUES (2, 2, 3, '2023-01-02', 3, 'Las clases de matemáticas fueron muy útiles.', 4, 'Nuevo comentario para el contratador', 4, NULL, 5);
+INSERT INTO public."Historial" VALUES (4, 4, 5, '2023-01-04', 2, 'La reparación del electrodoméstico tardó un poco más de lo esperado.', 3, 'Cliente comprensivo', 3, NULL, 3);
+INSERT INTO public."Historial" VALUES (5, 5, 3, '2023-01-05', 4, 'Muy buen servicio de asistencia domiciliaria.', 4, 'Cliente cordial', 4, NULL, 4);
+INSERT INTO public."Historial" VALUES (7, 2, 1, '2023-01-07', 5, 'Me encantó el servicio de peluquería en casa.', 4, 'Cliente cordial', 2, NULL, 25);
+INSERT INTO public."Historial" VALUES (8, 1, 4, '2023-01-08', 2, 'Nuevo comentario para el proveedor', 3, 'Nuevo comentario para el contratador', 3, NULL, 3);
+INSERT INTO public."Historial" VALUES (9, 4, 2, '2023-01-09', 4, 'El masaje fue increíble, definitivamente lo recomendaría.', 5, 'Cliente satisfecho', 4, NULL, 2);
+INSERT INTO public."Historial" VALUES (10, 3, 5, '2023-01-10', 3, 'La reparación del grifo no fue del todo satisfactoria.', 2, 'Cliente insatisfecho', 3, NULL, 3);
+INSERT INTO public."Historial" VALUES (11, 5, 1, '2023-01-11', 3, 'El cuidado de mi abuela fue excelente, gracias por su atención.', 5, 'Cliente satisfecho', 4, NULL, 4);
+INSERT INTO public."Historial" VALUES (13, 1, 5, '2023-01-13', 3, 'Nuevo comentario para el proveedor', 4, 'Nuevo comentario para el contratador', 4, NULL, 25);
+INSERT INTO public."Historial" VALUES (14, 3, 2, '2024-11-01', 2, 'La reparación del techo fue aceptable, pero podría mejorar en algunos detalles.', 3, 'Cliente comprensivo', 3, NULL, 3);
+INSERT INTO public."Historial" VALUES (32, 3, 16, '2024-11-27', NULL, NULL, NULL, NULL, 1, NULL, 3);
+INSERT INTO public."Historial" VALUES (33, 3, 16, '2024-11-28', NULL, NULL, NULL, NULL, 1, NULL, 3);
+INSERT INTO public."Historial" VALUES (34, 5, 16, '2024-11-02', NULL, NULL, NULL, NULL, 1, NULL, 5);
+INSERT INTO public."Historial" VALUES (35, 5, 16, '2024-11-29', NULL, NULL, NULL, NULL, 1, NULL, 5);
 
 
 --
@@ -946,7 +936,7 @@ SELECT pg_catalog.setval('public."Generos_id_seq"', 5, true);
 -- Name: Historial_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Historial_id_seq"', 30, true);
+SELECT pg_catalog.setval('public."Historial_id_seq"', 35, true);
 
 
 --
@@ -1174,7 +1164,7 @@ ALTER TABLE ONLY public."ZonaOfrecidos"
     ADD CONSTRAINT "idZonas_zonasId" FOREIGN KEY ("idZona") REFERENCES public."Zonas"(id) NOT VALID;
 
 
--- Completed on 2024-11-22 11:41:02
+-- Completed on 2024-11-25 09:48:19
 
 --
 -- PostgreSQL database dump complete
