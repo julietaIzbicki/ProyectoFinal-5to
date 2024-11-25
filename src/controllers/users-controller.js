@@ -62,4 +62,27 @@ router.post('/register', async (req, res) => {
     }
 });
 
+router.get('/profile', AutenticationMiddleware.AuthMiddleware, async (req, res) => {
+    try {
+        console.log("Datos del usuario del token:", req.user);
+        const userEmail = req.user?.email; // El email viene del token decodificado
+        
+        if (!userEmail) {
+            return res.status(400).json({ success: false, message: 'Email no encontrado en el token.' });
+        }
+
+        const profile = await svc.getProfileAsync(userEmail);
+        if (profile) {
+            return res.status(200).json(profile);
+        } else {
+            return res.status(404).json({ success: false, message: "Perfil no encontrado" });
+        }
+    } catch (error) {
+        console.error('Error al obtener perfil:', error);
+        return res.status(500).json({ success: false, message: "Error interno del servidor" });
+    }
+});
+
+
+
 export default router;

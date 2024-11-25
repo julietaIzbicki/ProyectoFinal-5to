@@ -14,4 +14,10 @@ export default class UsersService {
         const user = await repo.createAsync(entity);
         return user;
     }
+
+    getProfileAsync = async (email) => {
+        const repo = new UsersRepository();
+        const profile = await repo.getProfileByIdAsync(email);
+        return profile;
+    }
 }
