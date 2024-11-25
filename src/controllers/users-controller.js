@@ -65,8 +65,8 @@ router.post('/register', async (req, res) => {
 router.get('/profile', AutenticationMiddleware.AuthMiddleware, async (req, res) => {
     try {
         console.log("Datos del usuario del token:", req.user);
-        const userEmail = req.user?.email; // El email viene del token decodificado
-        
+        const userEmail = req.user; // El email viene del token decodificado
+        console.log(userEmail);
         if (!userEmail) {
             return res.status(400).json({ success: false, message: 'Email no encontrado en el token.' });
         }
