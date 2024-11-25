@@ -62,10 +62,10 @@ router.post('/register', async (req, res) => {
     }
 });
 
-router.get('/profile', AutenticationMiddleware.AuthMiddleware, async (req, res) => {
+router.get('/profile', AutenticationMiddleware.AuthMiddleware,
+async (req, res) => {
     try {
-        console.log("Datos del usuario del token:", req.user);
-        const userEmail = req.user; // El email viene del token decodificado
+        const userEmail = req.email; 
         console.log(userEmail);
         if (!userEmail) {
             return res.status(400).json({ success: false, message: 'Email no encontrado en el token.' });
@@ -82,7 +82,5 @@ router.get('/profile', AutenticationMiddleware.AuthMiddleware, async (req, res) 
         return res.status(500).json({ success: false, message: "Error interno del servidor" });
     }
 });
-
-
 
 export default router;

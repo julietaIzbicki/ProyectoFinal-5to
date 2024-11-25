@@ -10,7 +10,7 @@ class AutenticationMiddleware {
                 const claveSecreta = "MaiuJuli_0607";
                 let original = await Jwt.verify(token, claveSecreta);
                 req.id_user = original.id;
-                console.log(req.id_user)
+                req.email = original.email;
                 next();
             } else {
                 return res.status(401).send("Token no proporcionado");
