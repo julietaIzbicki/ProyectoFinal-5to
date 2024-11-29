@@ -53,7 +53,7 @@ router.post('/register', async (req, res) => {
     }
 
     try {
-        const existeUsuario = await svc.getByEmailAsync(user.email); // Nueva función del servicio
+        const existeUsuario = await svc.getByUsernameAsync(user.email); 
         if (existeUsuario) {
             return res.status(409).send('El usuario ya existe.');
         }
