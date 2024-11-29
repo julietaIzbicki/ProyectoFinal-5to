@@ -5,7 +5,7 @@
 -- Dumped from database version 16.2
 -- Dumped by pg_dump version 16.0
 
--- Started on 2024-11-25 09:48:19
+-- Started on 2024-11-29 11:49:39
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -316,7 +316,7 @@ CREATE TABLE public."Usuarios" (
     nombre character varying(30) NOT NULL,
     apellido character varying(30) NOT NULL,
     direccion character varying(50),
-    contrasena character varying(15) NOT NULL,
+    contrasena character varying(100) NOT NULL,
     "idGenero" integer,
     foto character varying(250),
     "FechaNacimiento" date
@@ -1164,7 +1164,7 @@ ALTER TABLE ONLY public."ZonaOfrecidos"
     ADD CONSTRAINT "idZonas_zonasId" FOREIGN KEY ("idZona") REFERENCES public."Zonas"(id) NOT VALID;
 
 
--- Completed on 2024-11-25 09:48:19
+-- Completed on 2024-11-29 11:49:39
 
 --
 -- PostgreSQL database dump complete

@@ -39,6 +39,8 @@ router.post('/login', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     let user = req.body;
+
+    // Validaciones básicas
     if (!user.nombre || !user.apellido) {
         return res.status(400).send('Los campos nombre y apellido son obligatorios.');
     }
@@ -46,15 +48,33 @@ router.post('/register', async (req, res) => {
     if (!emailRegex.test(user.email)) {
         return res.status(400).send('El email no es válido.');
     }
-    if (user.contrasena.length < 3) {
-        return res.status(400).send('La contrasena debe tener al menos 6 caracteres.');
+    if (user.contrasena.length < 6) {
+        return res.status(400).send('La contraseña debe tener al menos 6 caracteres.');
     }
+
     try {
+        const existeUsuario = await svc.getByEmailAsync(user.email); // Nueva función del servicio
+        if (existeUsuario) {
+            return res.status(409).send('El usuario ya existe.');
+        }
+
         const respuesta = await svc.createAsync(user);
         if (respuesta >= 0) {
-            return res.status(201).send('Usuario creado exitosamente.');
-        }else{
-            return res.status(400).send('El usuario ya existe.');
+            const usarInicio = await svc.getByUsernameAsync({ email: user.email, contrasena: user.contrasena });
+            if (usarInicio) {
+                const options = { expiresIn: '1h', issuer: 'ort' };
+                const token = jwt.sign(usarInicio, claveSecreta, options);
+
+                return res.status(201).json({
+                    success: true,
+                    message: 'Usuario creado e iniciado sesión exitosamente.',
+                    token: token,
+                });
+            } else {
+                return res.status(500).send('Error al iniciar sesión después del registro.');
+            }
+        } else {
+            return res.status(500).send('No se pudo registrar el usuario.');
         }
     } catch (error) {
         console.error('Error al crear usuario:', error);
