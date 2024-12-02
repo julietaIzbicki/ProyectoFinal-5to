@@ -20,4 +20,10 @@ export default class UsersService {
         const profile = await repo.getProfileByIdAsync(email);
         return profile;
     }
+
+    updateProfileAsync = async (email, newProfilePicture) => {
+        const repo = new UsersRepository();
+        const profile = await repo.updateProfileAsync(email, newProfilePicture);
+        return profile;
+    }
 }

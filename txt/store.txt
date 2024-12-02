@@ -1,13 +1,38 @@
------------------------------------------- PROCEDURE LIKES ------------------------------------------
-DROP PROCEDURE IF EXISTS Likear(INTEGER, INTEGER, OUT INTEGER);
 
-CREATE OR REPLACE PROCEDURE Likear(
-  IN idUsuario INTEGER,
-  IN idOfrecido INTEGER,
-  OUT resultado INTEGER
-)
-LANGUAGE plpgsql
-AS $$
+CREATE PROCEDURE public."ActualizarResena"(IN p_id integer, IN p_comentario text, IN p_tipo_resena text, OUT resultado integer)
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+    IF p_tipo_resena = 'proveedor' THEN
+        UPDATE public."Historial"
+        SET "resenaProveedor" = p_comentario
+        WHERE "id" = p_id;
+    ELSIF p_tipo_resena = 'contratador' THEN
+        UPDATE public."Historial"
+        SET "resenaContratador" = p_comentario
+        WHERE "id" = p_id;
+    ELSE
+        resultado := -1; 
+    END IF;
+    IF NOT FOUND THEN
+        resultado := -2; 
+    ELSE
+        resultado := 1;
+    END IF;
+END;
+$$;
+
+
+ALTER PROCEDURE public."ActualizarResena"(IN p_id integer, IN p_comentario text, IN p_tipo_resena text, OUT resultado integer) OWNER TO postgres;
+
+--
+-- TOC entry 238 (class 1255 OID 16523)
+-- Name: likear(integer, integer); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public.likear(IN idusuario integer, IN idofrecido integer, OUT resultado integer)
+    LANGUAGE plpgsql
+    AS $$
 BEGIN
     IF EXISTS (
         SELECT 1 
@@ -28,21 +53,17 @@ BEGIN
 END;
 $$;
 
------------------------------------------- PROCEDURE REGISTRARSE ------------------------------------------
-DROP PROCEDURE IF EXISTS registrarse(character varying, character varying, character varying, character varying, character varying, integer, character varying, date);
-CREATE OR REPLACE PROCEDURE Registrarse(
-    IN p_email character varying,
-    IN p_nombre character varying,
-    IN p_apellido character varying,
-    IN p_direccion character varying,
-    IN p_contrasena character varying,
-    IN p_idGenero integer,
-    IN p_foto character varying,
-    IN p_fechaNacimiento date,
-    OUT p_resultado INTEGER
-)
-LANGUAGE plpgsql
-AS $$
+
+ALTER PROCEDURE public.likear(IN idusuario integer, IN idofrecido integer, OUT resultado integer) OWNER TO postgres;
+
+--
+-- TOC entry 250 (class 1255 OID 16524)
+-- Name: registrarse(character varying, character varying, character varying, character varying, character varying, integer, character varying, date); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public.registrarse(IN p_email character varying, IN p_nombre character varying, IN p_apellido character varying, IN p_direccion character varying, IN p_contrasena character varying, IN p_idgenero integer, IN p_foto character varying, IN p_fechanacimiento date, OUT p_resultado integer)
+    LANGUAGE plpgsql
+    AS $$
 BEGIN
     IF EXISTS (
         SELECT 1 
@@ -75,3 +96,45 @@ BEGIN
     END IF;
 END;
 $$;
+
+
+ALTER PROCEDURE public.registrarse(IN p_email character varying, IN p_nombre character varying, IN p_apellido character varying, IN p_direccion character varying, IN p_contrasena character varying, IN p_idgenero integer, IN p_foto character varying, IN p_fechanacimiento date, OUT p_resultado integer) OWNER TO postgres;
+
+--
+-- TOC entry 252 (class 1255 OID 16528)
+-- Name: reserva(integer, integer, integer, date, integer); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE OR REPLACE PROCEDURE public.reserva(
+	IN idpublicacion integer,
+	IN idoffer integer,
+	IN idcontratador integer,
+	IN fechareservada date,
+	IN idestado integer,
+	OUT resultado integer
+)
+LANGUAGE 'plpgsql'
+AS $BODY$
+DECLARE
+    existing_reservation integer;
+BEGIN
+    SELECT id INTO existing_reservation
+    FROM "Historial"  
+    WHERE "Historial"."idProveedor" = idpublicacion  
+      AND "Historial"."idContratador" = idcontratador
+      AND "Historial"."fechaReservada" = fechareservada;
+
+    IF existing_reservation IS NOT NULL THEN
+        UPDATE "Historial"  
+        SET idEstado = idestado
+        WHERE id = existing_reservation;
+        resultado := 1;
+    ELSE
+        INSERT INTO "Historial" ("idProveedor", "idContratador", "fechaReservada", "idEstado")
+        VALUES (idpublicacion, idcontratador, fechareservada, idestado);
+        resultado := 2;
+    END IF;
+END;
+$BODY$;
+ALTER PROCEDURE public.reserva(integer, integer, integer, date, integer)
+    OWNER TO postgres;

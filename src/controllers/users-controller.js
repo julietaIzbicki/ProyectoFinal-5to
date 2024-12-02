@@ -3,6 +3,8 @@ import { parse } from 'dotenv';
 import jwt from 'jsonwebtoken';
 import UsersService from '../services/users-service.js';
 import AutenticationMiddleware from '../middlewares/autentication-middleware.js';
+import multer from 'multer';
+
 const router = Router();
 const svc = new UsersService();
 
@@ -40,7 +42,6 @@ router.post('/login', async (req, res) => {
 router.post('/register', async (req, res) => {
     let user = req.body;
 
-    // Validaciones básicas
     if (!user.nombre || !user.apellido) {
         return res.status(400).send('Los campos nombre y apellido son obligatorios.');
     }
@@ -102,5 +103,31 @@ async (req, res) => {
         return res.status(500).json({ success: false, message: "Error interno del servidor" });
     }
 });
+
+const storage = multer.memoryStorage();  
+const upload = multer({ storage });
+
+router.put('/profile/picture', async (req, res) => {
+    try {
+      const { email, foto } = req.body;
+
+      console.log("el email es: ", email, " y la url ", foto);
+  
+      if (!foto) {
+        return res.status(400).json({ message: 'No se ha proporcionado ninguna foto' });
+      }
+  
+      const result = await svc.updateProfileAsync(email, foto);
+      console.log(result);
+      if (result === 1) {
+        res.status(200).json({ success: true, message: 'Foto actualizada correctamente' });
+      } else {
+        res.status(400).json({ success: false, message: 'No se pudo actualizar la foto' });
+      }
+    } catch (error) {
+      console.error('Error al actualizar la foto de perfil:', error);
+      res.status(500).json({ message: 'Error interno del servidor' });
+    }
+  });
 
 export default router;

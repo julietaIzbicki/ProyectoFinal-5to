@@ -11,6 +11,7 @@ class AutenticationMiddleware {
                 let original = await Jwt.verify(token, claveSecreta);
                 req.id_user = original.id;
                 req.email = original.email;
+                console.log("ENTRE EL MIDDLE", req.email, req.id_user);
                 next();
             } else {
                 return res.status(401).send("Token no proporcionado");

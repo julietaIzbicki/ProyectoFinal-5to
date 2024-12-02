@@ -70,4 +70,28 @@ export default class UsersRepository {
         }
         return returnEntity;
     }
+    
+    updateProfileAsync = async (email, newProfilePictureUrl) => {
+        let resultado = 0;
+        const client = new Client(DBConfig);
+        try {
+          await client.connect();
+          const sql = `UPDATE public."Usuarios" 
+                       SET foto = $1
+                       WHERE email = $2`;
+          const values = [newProfilePictureUrl, email];
+          const result = await client.query(sql, values);
+          await client.end();
+      
+          if (result.rowCount > 0) {
+            resultado = 1; // Actualización exitosa
+          } else {
+            resultado = 0; // No se actualizó el perfil
+          }
+        } catch (error) {
+          console.log('Error al actualizar foto de perfil:', error);
+          resultado = -1; // Error al actualizar
+        }
+        return resultado; 
+      };
 }
