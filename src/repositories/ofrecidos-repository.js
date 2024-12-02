@@ -39,6 +39,15 @@ export default class OfrecidosRepository {
       values.push("%" + filters.categoria + "%");
       i++;
     }
+    if (filters.busqueda != null) {
+      miQuery += `AND (
+          lower(public."Ofrecidos"."tags") ILIKE lower($${i}) OR 
+          lower(public."Ofrecidos"."descripcion") ILIKE lower($${i}) OR 
+          lower(public."Ofrecidos"."titulo") ILIKE lower($${i})
+      ) `;
+      values.push("%" + filters.busqueda + "%");
+      i++;
+    }
     miQuery += `
     GROUP BY 
     public."Ofrecidos"."id",
