@@ -103,16 +103,17 @@ export default class OfrecidosRepository {
   createOfrecido = async (ofrecido) => {
     const client = new Client(DBConfig);
     const values = [
+      ofrecido.titulo,
       ofrecido.descripcion,
       ofrecido.precio,
-      ofrecido.idProveedor,
+      ofrecido.idusuario,
       ofrecido.idcategoria,
       ofrecido.tags,
     ];
     const sql = `
             INSERT INTO public."Ofrecidos" (
-                "descripcion", "precio", "idProveedor", "idcategoria", "tags"
-            ) VALUES ($1, $2, $3, $4, $5) RETURNING id
+                "titulo", "descripcion", "precio", "idProveedor", "idcategoria", "tags"
+            ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id
         `;
     try {
       await client.connect();

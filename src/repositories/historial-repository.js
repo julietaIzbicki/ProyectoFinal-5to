@@ -21,7 +21,6 @@ export default class HistorialRepository {
       
       const result = await client.query(sql, values);
       resultado = result.rows[0]?.resultado ?? 0;
-      console.log("Resultado del procedimiento:", resultado);
     } catch (error) {
       console.error("Error al llamar al procedimiento almacenado:", error);
     } finally {

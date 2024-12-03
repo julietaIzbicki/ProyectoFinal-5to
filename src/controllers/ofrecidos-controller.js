@@ -33,6 +33,7 @@ router.get('/id/:id', async (req, res) => {
 router.post('/ofrecidos',
     AutenticationMiddleware.AuthMiddleware, 
 
+    body('titulo').isString().withMessage('Titulo es requerida y debe ser una cadena de texto.'),
     body('descripcion').isString().withMessage('Descripción es requerida y debe ser una cadena de texto.'),
     body('precio').isNumeric().withMessage('Precio es requerido y debe ser un número.'),
     body('idcategoria').isNumeric().withMessage('ID de categoría es requerido y debe ser un número.'),
