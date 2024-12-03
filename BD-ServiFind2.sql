@@ -5,7 +5,7 @@
 -- Dumped from database version 16.2
 -- Dumped by pg_dump version 16.0
 
--- Started on 2024-12-03 11:15:28
+-- Started on 2024-12-03 11:38:35
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -146,7 +146,7 @@ ALTER SEQUENCE public."Favoritos_id_seq" OWNED BY public."Favoritos".id;
 CREATE TABLE public."FotosOfrecidos" (
     id integer NOT NULL,
     "idOfrecido" integer NOT NULL,
-    foto character varying(250)
+    foto character varying(400)
 );
 
 
@@ -640,7 +640,7 @@ INSERT INTO public."Favoritos" VALUES (42, 16, 1);
 INSERT INTO public."Favoritos" VALUES (43, 16, 4);
 INSERT INTO public."Favoritos" VALUES (44, 16, 9);
 INSERT INTO public."Favoritos" VALUES (45, 16, 8);
-INSERT INTO public."Favoritos" VALUES (46, 16, 3);
+INSERT INTO public."Favoritos" VALUES (55, 16, 7);
 
 
 --
@@ -650,56 +650,39 @@ INSERT INTO public."Favoritos" VALUES (46, 16, 3);
 --
 
 INSERT INTO public."FotosOfrecidos" VALUES (93, 25, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTId2MS7lL6F1n2s7xoGPAprM0Z_Qyp_y7Wbp3muu2HaPKMRikH2D840d3Ft3sgDIURnck&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (94, 25, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQkN3UIuj9Q1fYG9DwMZhLwf5tEGiRsYt76A&s');
 INSERT INTO public."FotosOfrecidos" VALUES (95, 30, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpMGRl_ENVAh4KxWalXqacW-UzXS5XJeInSw&s');
-INSERT INTO public."FotosOfrecidos" VALUES (96, 30, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRieNisuymN5QgH2hwwUtptpxhKJ2wdNQZN9gk4PcLyGdLLkSJIpPWKQxAlVcXTz8f7ALw&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (97, 30, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFGo5pZHnFOLNm3ibYtFv36Tl5THtTIOmb9NVfUwitflfoK-HcBILVCetPGRSCEyGqQE&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (98, 30, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQcVuuIz01npmEoL_KRTBaD6ad4ZZjl0B-4Q&s');
-INSERT INTO public."FotosOfrecidos" VALUES (99, 30, 'https://www.onlinepersonaltrainer.es/wp-content/uploads/2020/02/entrenadores-personales-a-domicilio-2.jpg');
 INSERT INTO public."FotosOfrecidos" VALUES (100, 31, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjXDlXqZzjKed4jwRc-Tfv6MTz3CCoAmAzUA&s');
-INSERT INTO public."FotosOfrecidos" VALUES (101, 31, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHV7LI-kUJnxbGujV6iYSMbzG405RBMXZfNQKAGGu3kBR95xdyNQT1zkgqplGHEy65niU&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (102, 31, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr7wf_yrpwfHM2K23PkUMiWHkwAUXmfCIUd3asFhmG207wjJaDCfl06aWt6RNl65BD128&usqp=CAU');
 INSERT INTO public."FotosOfrecidos" VALUES (103, 34, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfQMgyK7WnHl_mriHBHiza7LQBdOqML3UcpA&s');
-INSERT INTO public."FotosOfrecidos" VALUES (104, 34, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ_NsJGIgoGAvexbksN5QixG0jvfTt6RNcsA&s');
-INSERT INTO public."FotosOfrecidos" VALUES (105, 36, 'https://aprende.com/wp-content/uploads/2023/06/sistemas-de-camaras-de-seguridad.webp');
 INSERT INTO public."FotosOfrecidos" VALUES (106, 36, 'https://blog.zequer.com/wp-content/uploads/2018/01/Como-instalar-una-alarma-en-casa-sin-pagar-cuotas-MediaTrends-e1516825409899.jpg');
-INSERT INTO public."FotosOfrecidos" VALUES (107, 36, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDS6Czk5uQPQ-xLoCiTxF1TEZkJctsRpLRNw&s');
-INSERT INTO public."FotosOfrecidos" VALUES (108, 39, 'https://cdecora.com.pe/wp-content/uploads/2022/03/remodelacion-de-interiores.jpg');
 INSERT INTO public."FotosOfrecidos" VALUES (109, 39, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtsWpqzyut7rwoZmY9HLfuDnmbIKtI-R62rg&s');
-INSERT INTO public."FotosOfrecidos" VALUES (110, 39, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQdDWx6puQl7OL4aejT6hA6aU-r0pLiar1gg&s');
-INSERT INTO public."FotosOfrecidos" VALUES (111, 41, 'https://xuanlanyoga.com/wp-content/uploads/2020/04/meditacion-en-casa-meditar-altar.jpeg');
-INSERT INTO public."FotosOfrecidos" VALUES (112, 41, 'https://pymstatic.com/7775/conversions/ejercicios-meditacion-wide_webp.webp');
 INSERT INTO public."FotosOfrecidos" VALUES (113, 41, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_c2clvT3GJ4S-7dnZKmpli6bj7BiU2ve1Dw&s');
 INSERT INTO public."FotosOfrecidos" VALUES (63, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4s_-KLXK_hpAbwSs2XXex2u8EFzeSMGWizg&s');
-INSERT INTO public."FotosOfrecidos" VALUES (64, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtjavkCDs4qeiNtGaDCemWzM4dQmCLB1wTkA&s');
-INSERT INTO public."FotosOfrecidos" VALUES (65, 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk5FHNYj7VyhnX1b66M_WjY0H2bb9Hvkd9pg&s');
-INSERT INTO public."FotosOfrecidos" VALUES (66, 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXrV3D3izKTT0t_tZU2Pf6idZjT0M_6A9fFg&s');
 INSERT INTO public."FotosOfrecidos" VALUES (67, 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYeFxL-Pae9LX4d7Q3zl7p9vqbwt-NYAhu9v-SNVDVDXvAOAdfYb1Bl2K34Q4hw1H1bSU&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (68, 2, 'https://img.freepik.com/fotos-premium/masaje-fresas-espalda-mujer-aromaterapia-frutos-rojos_157823-1883.jpg');
 INSERT INTO public."FotosOfrecidos" VALUES (69, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQd-reb0nS775oEGaK2TvJOcA1ATBPsx0-fA&s');
-INSERT INTO public."FotosOfrecidos" VALUES (70, 3, 'https://irp.cdn-website.com/a2654150/MOBILE/jpg/1885.jpg');
-INSERT INTO public."FotosOfrecidos" VALUES (71, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo7KCURyxUTvV7iymbT7XIY6JC47t76_rHsw&s');
-INSERT INTO public."FotosOfrecidos" VALUES (72, 4, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWXgqfiX8n-ORlb6aYjl_qw4S2Zhmt4Pr6gg&s');
 INSERT INTO public."FotosOfrecidos" VALUES (73, 4, 'https://media.ambito.com/p/36e6226a5e41468611bef7e6dedc49af/adjuntos/239/imagenes/041/081/0041081792/375x211/smart/cuidador_de_personas_mayores-pamijpg.jpg');
 INSERT INTO public."FotosOfrecidos" VALUES (74, 5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiElwBO_xXbKu_0lm8EoGZ4gqjiosn3yCnYA&s');
 INSERT INTO public."FotosOfrecidos" VALUES (75, 6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkX_j8pdJhN4lJ8N__NasY5-m74hrVprZ6CQ&s');
-INSERT INTO public."FotosOfrecidos" VALUES (76, 6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbLpSCyByRwMz1yF2wqi5aR7dUhH9IKYxnsgKVvHESdd2Ic4BRh-uo29mWz2Orh8xC2k&usqp=CAU');
 INSERT INTO public."FotosOfrecidos" VALUES (77, 7, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS9F1Qx1lObzvdhgLgS3W23105YCq0-D4Lvw&s');
-INSERT INTO public."FotosOfrecidos" VALUES (78, 7, 'https://www.65ymas.com/uploads/s1/31/37/19/comprabaciones-que-deberias-hacer-antes-de-llamar-al-servicio-tecnico_1_621x621.jpeg');
 INSERT INTO public."FotosOfrecidos" VALUES (79, 8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj2z8vVlsIfppPazi7xcX3eHlhXigPrK3gwQ&s');
-INSERT INTO public."FotosOfrecidos" VALUES (80, 8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6PXtTS8t5wgb7n9qaTkdOrJM-0ZGUGn6eC_SKXEnrkGEtXsTWEHg9YwEfEYUb89dDZ7g&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (81, 8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV4FagAYyY9gGxCzysbphwIQJ4M4Zli-w2GA&s');
 INSERT INTO public."FotosOfrecidos" VALUES (82, 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2I44NgFn4ZtrNUQW5dlK1VkdaXIlH_7ZHfg&s');
-INSERT INTO public."FotosOfrecidos" VALUES (83, 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDn-G5AVMfcJ7OKS_FvgqT6yv5tteqD6aiPHfJ-BusKJ8sAkAvZxYlT-rZzdiff3D9o0g&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (84, 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXu0NH6k7YvSYAJTT_pqIXu52XyJfIXEQvTKh_x6yhwKrSYi6QyZU6k4FCEt-jGgTQQ0&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (85, 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm06KvYNbA77hkO2vmJfsC-XWq5QTdA8j0yQ&s');
-INSERT INTO public."FotosOfrecidos" VALUES (86, 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RHRDxrj8PiKqaYFnAAmWcQ_tf0ss3C-d8vl04QUhqu_15zKAR8S9KXljY7cUqXG_k0M&usqp=CAU');
 INSERT INTO public."FotosOfrecidos" VALUES (87, 11, 'https://i.ytimg.com/vi/wohCFLu4O04/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AHUBoAC4AOKAgwIABABGGUgZShlMA8=&rs=AOn4CLDIYxDzbmLCuSFnxtsw0ayEmS4FZw');
-INSERT INTO public."FotosOfrecidos" VALUES (88, 11, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZy1Ova7OjcCJWS1oBJMEe1VhMMsOx-iotmQ&s');
-INSERT INTO public."FotosOfrecidos" VALUES (89, 23, 'https://facilitylatam.com/wp-content/uploads/2021/10/Servicio-de-Limpieza-%E2%80%93Empresa-de-Limpieza.-Buenos-Aires-%E2%80%93-Argentina.-Facility-Latam-4.jpg');
 INSERT INTO public."FotosOfrecidos" VALUES (90, 23, 'https://lh3.googleusercontent.com/proxy/THpmaFAuyEuMtEt3PMGZh6Ogh7vdXUnCMsL1X9oMPwBl30xyEme-jEl1eGT6EyJD3Rh_NwH4Hv62hQT72yqDdyMCqrkYDRqP');
 INSERT INTO public."FotosOfrecidos" VALUES (91, 24, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQeClXtEl3oA0wmpizfYBx-SXx2S8fSXd9Ahk6rUv5lrfORNpXf_pozThEg6BZMbvcMg&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (92, 24, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9wp6QjF_XHrIeOuwul4DmgbRwaMjp76zs_MbYUT6qX4lLadBTyhgJNFYyXFH1JxyxXR0&usqp=CAU');
+INSERT INTO public."FotosOfrecidos" VALUES (114, 26, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmonstruosdeldiseno.com%2Fdiseno-grafico%2Fcomo-hacer-un-diseno-grafico&psig=AOvVaw113b5qU45_lHIcnqbgFYTe&ust=1733322319046000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKjmofvmi4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (115, 27, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fkamaispa.com%2Fque-son-los-masajes-holisticos-y-cuales-son-sus-beneficios%2F&psig=AOvVaw16RM-wcFKTfRfHrY5tA5Qy&ust=1733322355272000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOj5pozni4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (116, 23, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fedifica.com.pe%2Fblog%2Ftips-limpiar-hogar-rapido%2F&psig=AOvVaw3h75FKhoy22wlNq6Mqllc7&ust=1733322397277000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMCG-Z_ni4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (117, 32, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.liderlogo.es%2Fdiseno-web%2Fcuales-son-las-caracteristicas-de-un-buen-diseno-web%2F&psig=AOvVaw0yMN8e979-h2Vfd9PAGYgS&ust=1733322434462000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJD4ybLni4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (118, 33, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fdiagonalenglish.com%2Fquien-necesita-clases-de-ingles%2F&psig=AOvVaw2sq4XbELJKdJX5wcqhc8pF&ust=1733322486149000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjLvMrni4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (119, 40, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sesamehr.co%2Fblog%2Finformes-y-reportes%2Finforme-actividades-rrhh%2F&psig=AOvVaw26vgV1OQ3bDB3MpOx3sFPA&ust=1733322526204000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOC4ht_ni4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (120, 29, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fvilaplana.com%2F2022%2F05%2F01%2Ffunciones-importantes-catering%2F&psig=AOvVaw2TSbfwE_J3i8Elux0DGMxa&ust=1733322575720000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOj85PTni4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (121, 35, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.psicoactiva.com%2Fblog%2Fen-que-consiste-el-dialogo-estrategico-en-terapia%2F&psig=AOvVaw1VaQdL52nIa4dYnPKN-T01&ust=1733322601186000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOjd9IDoi4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (122, 28, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcashlogy.com%2Fes%2Fcomo-mejorar-contabilidad-empresa%2F&psig=AOvVaw3zOP-uJvenoBz9fkhoYXaf&ust=1733322646780000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDP45boi4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (123, 9, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fesdubai.com%2Fes%2Flearn-english%2Fenglish-grammar-lessons-getting-to-know-parts-of-speech%2F&psig=AOvVaw0AhWWVzdJioX-sI2lGeEL5&ust=1733322702081000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPj187Doi4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (124, 42, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpatiodeautos.com%2Fgeneral%2F6-consejos-para-convertirte-en-un-mejor-mecanico-de-autos%2F&psig=AOvVaw0YWJEhrKuVhehLckR9RotJ&ust=1733322743704000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCODmksXoi4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (125, 7, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mipodo.com%2Fblog%2Freparaciones%2Freparacion-electrodomesticos%2F&psig=AOvVaw1tqdd6QURMxa7-KOQIX17T&ust=1733322773806000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOinitPoi4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (126, 43, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.organizartemagazine.com%2Fcomo-crear-el-plan-de-limpieza-de-una-casa%2F&psig=AOvVaw03B2hgDvct8qvBJ2WXxgOO&ust=1733322850101000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPim3_foi4oDFQAAAAAdAAAAABAJ');
+INSERT INTO public."FotosOfrecidos" VALUES (127, 50, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tiktok.com%2F%40luchota_%2Fvideo%2F7071399427050573061&psig=AOvVaw2oxa4SJyYK8AjQSwU8AX1n&ust=1733322913062000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCsv5Xpi4oDFQAAAAAdAAAAABAS');
+INSERT INTO public."FotosOfrecidos" VALUES (128, 37, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmott.pe%2Fnoticias%2Flos-10-mejores-cursos-de-fotografia-digital-y-profesional-online%2F&psig=AOvVaw0BcLOS3_zBTCQLi_EJMb5k&ust=1733322972906000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDH3LLpi4oDFQAAAAAdAAAAABAE');
 
 
 --
@@ -916,7 +899,7 @@ SELECT pg_catalog.setval('public."Estados_id_seq"', 5, true);
 -- Name: Favoritos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Favoritos_id_seq"', 48, true);
+SELECT pg_catalog.setval('public."Favoritos_id_seq"', 59, true);
 
 
 --
@@ -925,7 +908,7 @@ SELECT pg_catalog.setval('public."Favoritos_id_seq"', 48, true);
 -- Name: FotosOfrecidos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."FotosOfrecidos_id_seq"', 113, true);
+SELECT pg_catalog.setval('public."FotosOfrecidos_id_seq"', 128, true);
 
 
 --
@@ -1171,7 +1154,7 @@ ALTER TABLE ONLY public."ZonaOfrecidos"
     ADD CONSTRAINT "idZonas_zonasId" FOREIGN KEY ("idZona") REFERENCES public."Zonas"(id) NOT VALID;
 
 
--- Completed on 2024-12-03 11:15:28
+-- Completed on 2024-12-03 11:38:35
 
 --
 -- PostgreSQL database dump complete
