@@ -71,8 +71,8 @@ export default class OfrecidosRepository {
       const sql = miQuery;
       const result = await client.query(sql, values);
       await client.end();
-      returnEntity = result.rows;      
-      
+      returnEntity = result.rows;
+
     } catch (error) {
       console.log(error);
     }
@@ -85,19 +85,29 @@ export default class OfrecidosRepository {
     const client = new Client(DBConfig);
     await client.connect();
     const values = [id];
-    let miQuery = `SELECT * FROM public."Ofrecidos" WHERE id=$1`;
-    
+    let miQuery = `SELECT 
+    public."Ofrecidos"."id",
+    public."Ofrecidos"."titulo",
+    public."Ofrecidos"."descripcion",
+    public."Ofrecidos"."precio",
+    public."FotosOfrecidos"."foto",
+    COALESCE(AVG(public."Historial"."calificacionProveedor"), 0) AS promedio_calificacion
+  FROM public."Ofrecidos"
+  LEFT JOIN public."FotosOfrecidos" ON public."FotosOfrecidos"."idOfrecido" = public."Ofrecidos"."id"
+  LEFT JOIN public."Historial" ON public."Historial"."idProveedor" = public."Ofrecidos"."idProveedor"
+  WHERE public."Ofrecidos"."idProveedor" = $1
+  GROUP BY public."Ofrecidos"."id", public."FotosOfrecidos"."foto"`;
     try {
-        const result = await client.query(miQuery, values);
-        returnEntity = result.rows;
+      const result = await client.query(miQuery, values);
+      returnEntity = result.rows;
     } catch (error) {
-        console.log(error);
-        returnEntity = false;
+      console.log(error);
+      returnEntity = false;
     } finally {
-        await client.end(); 
+      await client.end();
     }
     return returnEntity;
-};
+  };
 
 
   createOfrecido = async (ofrecido) => {

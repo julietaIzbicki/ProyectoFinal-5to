@@ -18,9 +18,9 @@ router.get('/filtros', async (req, res) => {
     return respuesta;
 });
 
-router.get('/id/:id', async (req, res) => {
+router.get('/id', AutenticationMiddleware.AuthMiddleware, async (req, res) => {
     let respuesta;
-    let id = req.params;
+    let id = req.id_user;
     const getId = await svc.getById(id)
     if (getId != null){
         respuesta = res.status(200).json(getId);
