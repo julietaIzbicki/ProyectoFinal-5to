@@ -103,6 +103,22 @@ async (req, res) => {
     }
 });
 
+router.post('/profileById', 
+async (req, res) => {
+    try {
+        const id = req.body.id;
+        const profile = await svc.getProfileByIdAsync(id);
+        if (profile) {
+            return res.status(200).json(profile);
+        } else {
+            return res.status(404).json({ success: false, message: "Perfil no encontrado" });
+        }
+    } catch (error) {
+        console.error('Error al obtener perfil:', error);
+        return res.status(500).json({ success: false, message: "Error interno del servidor" });
+    }
+});
+
 const storage = multer.memoryStorage();  
 const upload = multer({ storage });
 

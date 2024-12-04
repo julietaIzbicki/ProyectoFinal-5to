@@ -17,6 +17,12 @@ export default class UsersService {
 
     getProfileAsync = async (email) => {
         const repo = new UsersRepository();
+        const profile = await repo.getProfileByTokenAsync(email);
+        return profile;
+    }
+
+    getProfileByIdAsync = async (email) => {
+        const repo = new UsersRepository();
         const profile = await repo.getProfileByIdAsync(email);
         return profile;
     }
