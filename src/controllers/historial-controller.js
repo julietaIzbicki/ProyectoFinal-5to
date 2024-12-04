@@ -9,7 +9,6 @@ const svc = new historialService();
 router.get('/historial', AutenticationMiddleware.AuthMiddleware, async (req, res) => {
     const { fecha } = req.query;
     try {
-        console.log(fecha);
         const historiales = await svc.getHistorialPorFecha(fecha);
         res.status(200).json(historiales);
     } catch (error) {

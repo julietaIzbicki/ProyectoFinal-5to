@@ -1264,6 +1264,9 @@ ALTER PROCEDURE public.registrarse(IN p_email character varying, IN p_nombre cha
 -- TOC entry 252 (class 1255 OID 16528)
 -- Name: reserva(integer, integer, integer, date, integer); Type: PROCEDURE; Schema: public; Owner: postgres
 --
+-- PROCEDURE: public.reserva(integer, integer, integer, date, integer)
+
+-- DROP PROCEDURE IF EXISTS public.reserva(integer, integer, integer, date, integer);
 
 CREATE OR REPLACE PROCEDURE public.reserva(
 	IN idpublicacion integer,
@@ -1271,8 +1274,7 @@ CREATE OR REPLACE PROCEDURE public.reserva(
 	IN idcontratador integer,
 	IN fechareservada date,
 	IN idestado integer,
-	OUT resultado integer
-)
+	OUT resultado integer)
 LANGUAGE 'plpgsql'
 AS $BODY$
 DECLARE
@@ -1280,7 +1282,8 @@ DECLARE
 BEGIN
     SELECT id INTO existing_reservation
     FROM "Historial"  
-    WHERE "Historial"."idProveedor" = idpublicacion  
+    WHERE "Historial"."idProveedor" = idoffer  
+    AND "Historial"."idPublicacion" = idpublicacion  
       AND "Historial"."idContratador" = idcontratador
       AND "Historial"."fechaReservada" = fechareservada;
 
@@ -1290,8 +1293,8 @@ BEGIN
         WHERE id = existing_reservation;
         resultado := 1;
     ELSE
-        INSERT INTO "Historial" ("idProveedor", "idContratador", "fechaReservada", "idEstado")
-        VALUES (idpublicacion, idcontratador, fechareservada, idestado);
+        INSERT INTO "Historial" ("idPublicacion", "idContratador", "fechaReservada", "idEstado", "idProveedor")
+        VALUES (idpublicacion, idcontratador, fechareservada, idestado, idoffer);
         resultado := 2;
     END IF;
 END;

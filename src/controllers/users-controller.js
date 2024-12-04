@@ -87,7 +87,6 @@ router.get('/profile', AutenticationMiddleware.AuthMiddleware,
 async (req, res) => {
     try {
         const userEmail = req.email; 
-        console.log(userEmail);
         if (!userEmail) {
             return res.status(400).json({ success: false, message: 'Email no encontrado en el token.' });
         }
@@ -109,16 +108,12 @@ const upload = multer({ storage });
 
 router.put('/profile/picture', async (req, res) => {
     try {
-      const { email, foto } = req.body;
-
-      console.log("el email es: ", email, " y la url ", foto);
-  
+      const { email, foto } = req.body;  
       if (!foto) {
         return res.status(400).json({ message: 'No se ha proporcionado ninguna foto' });
       }
   
       const result = await svc.updateProfileAsync(email, foto);
-      console.log(result);
       if (result === 1) {
         res.status(200).json({ success: true, message: 'Foto actualizada correctamente' });
       } else {
