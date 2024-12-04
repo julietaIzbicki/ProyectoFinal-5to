@@ -5,7 +5,7 @@
 -- Dumped from database version 16.2
 -- Dumped by pg_dump version 16.0
 
--- Started on 2024-12-03 11:38:35
+-- Started on 2024-12-04 08:56:58
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -636,11 +636,7 @@ INSERT INTO public."Favoritos" VALUES (21, 3, 3);
 INSERT INTO public."Favoritos" VALUES (22, 2, 2);
 INSERT INTO public."Favoritos" VALUES (23, 1, 1);
 INSERT INTO public."Favoritos" VALUES (24, 41, 8);
-INSERT INTO public."Favoritos" VALUES (42, 16, 1);
-INSERT INTO public."Favoritos" VALUES (43, 16, 4);
-INSERT INTO public."Favoritos" VALUES (44, 16, 9);
-INSERT INTO public."Favoritos" VALUES (45, 16, 8);
-INSERT INTO public."Favoritos" VALUES (55, 16, 7);
+INSERT INTO public."Favoritos" VALUES (69, 16, 25);
 
 
 --
@@ -666,23 +662,23 @@ INSERT INTO public."FotosOfrecidos" VALUES (77, 7, 'https://encrypted-tbn0.gstat
 INSERT INTO public."FotosOfrecidos" VALUES (79, 8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj2z8vVlsIfppPazi7xcX3eHlhXigPrK3gwQ&s');
 INSERT INTO public."FotosOfrecidos" VALUES (82, 10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2I44NgFn4ZtrNUQW5dlK1VkdaXIlH_7ZHfg&s');
 INSERT INTO public."FotosOfrecidos" VALUES (87, 11, 'https://i.ytimg.com/vi/wohCFLu4O04/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AHUBoAC4AOKAgwIABABGGUgZShlMA8=&rs=AOn4CLDIYxDzbmLCuSFnxtsw0ayEmS4FZw');
-INSERT INTO public."FotosOfrecidos" VALUES (90, 23, 'https://lh3.googleusercontent.com/proxy/THpmaFAuyEuMtEt3PMGZh6Ogh7vdXUnCMsL1X9oMPwBl30xyEme-jEl1eGT6EyJD3Rh_NwH4Hv62hQT72yqDdyMCqrkYDRqP');
 INSERT INTO public."FotosOfrecidos" VALUES (91, 24, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQeClXtEl3oA0wmpizfYBx-SXx2S8fSXd9Ahk6rUv5lrfORNpXf_pozThEg6BZMbvcMg&usqp=CAU');
-INSERT INTO public."FotosOfrecidos" VALUES (114, 26, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmonstruosdeldiseno.com%2Fdiseno-grafico%2Fcomo-hacer-un-diseno-grafico&psig=AOvVaw113b5qU45_lHIcnqbgFYTe&ust=1733322319046000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKjmofvmi4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (115, 27, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fkamaispa.com%2Fque-son-los-masajes-holisticos-y-cuales-son-sus-beneficios%2F&psig=AOvVaw16RM-wcFKTfRfHrY5tA5Qy&ust=1733322355272000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOj5pozni4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (116, 23, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fedifica.com.pe%2Fblog%2Ftips-limpiar-hogar-rapido%2F&psig=AOvVaw3h75FKhoy22wlNq6Mqllc7&ust=1733322397277000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMCG-Z_ni4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (117, 32, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.liderlogo.es%2Fdiseno-web%2Fcuales-son-las-caracteristicas-de-un-buen-diseno-web%2F&psig=AOvVaw0yMN8e979-h2Vfd9PAGYgS&ust=1733322434462000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJD4ybLni4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (118, 33, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fdiagonalenglish.com%2Fquien-necesita-clases-de-ingles%2F&psig=AOvVaw2sq4XbELJKdJX5wcqhc8pF&ust=1733322486149000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjLvMrni4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (119, 40, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sesamehr.co%2Fblog%2Finformes-y-reportes%2Finforme-actividades-rrhh%2F&psig=AOvVaw26vgV1OQ3bDB3MpOx3sFPA&ust=1733322526204000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOC4ht_ni4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (120, 29, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fvilaplana.com%2F2022%2F05%2F01%2Ffunciones-importantes-catering%2F&psig=AOvVaw2TSbfwE_J3i8Elux0DGMxa&ust=1733322575720000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOj85PTni4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (121, 35, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.psicoactiva.com%2Fblog%2Fen-que-consiste-el-dialogo-estrategico-en-terapia%2F&psig=AOvVaw1VaQdL52nIa4dYnPKN-T01&ust=1733322601186000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOjd9IDoi4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (122, 28, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcashlogy.com%2Fes%2Fcomo-mejorar-contabilidad-empresa%2F&psig=AOvVaw3zOP-uJvenoBz9fkhoYXaf&ust=1733322646780000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDP45boi4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (123, 9, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fesdubai.com%2Fes%2Flearn-english%2Fenglish-grammar-lessons-getting-to-know-parts-of-speech%2F&psig=AOvVaw0AhWWVzdJioX-sI2lGeEL5&ust=1733322702081000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPj187Doi4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (124, 42, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpatiodeautos.com%2Fgeneral%2F6-consejos-para-convertirte-en-un-mejor-mecanico-de-autos%2F&psig=AOvVaw0YWJEhrKuVhehLckR9RotJ&ust=1733322743704000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCODmksXoi4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (125, 7, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mipodo.com%2Fblog%2Freparaciones%2Freparacion-electrodomesticos%2F&psig=AOvVaw1tqdd6QURMxa7-KOQIX17T&ust=1733322773806000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOinitPoi4oDFQAAAAAdAAAAABAE');
-INSERT INTO public."FotosOfrecidos" VALUES (126, 43, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.organizartemagazine.com%2Fcomo-crear-el-plan-de-limpieza-de-una-casa%2F&psig=AOvVaw03B2hgDvct8qvBJ2WXxgOO&ust=1733322850101000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPim3_foi4oDFQAAAAAdAAAAABAJ');
-INSERT INTO public."FotosOfrecidos" VALUES (127, 50, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tiktok.com%2F%40luchota_%2Fvideo%2F7071399427050573061&psig=AOvVaw2oxa4SJyYK8AjQSwU8AX1n&ust=1733322913062000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCsv5Xpi4oDFQAAAAAdAAAAABAS');
-INSERT INTO public."FotosOfrecidos" VALUES (128, 37, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmott.pe%2Fnoticias%2Flos-10-mejores-cursos-de-fotografia-digital-y-profesional-online%2F&psig=AOvVaw0BcLOS3_zBTCQLi_EJMb5k&ust=1733322972906000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDH3LLpi4oDFQAAAAAdAAAAABAE');
+INSERT INTO public."FotosOfrecidos" VALUES (128, 37, 'https://mott.pe/noticias/wp-content/uploads/2017/09/los-10-cursos-de-fotograf%C3%ADa-digital-y-profesional-online-1.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (114, 26, 'https://monstruosdeldiseno.com/wp-content/uploads/2018/04/como-hacer-un-diseno-grafico.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (115, 27, 'https://kamaispa.com/wp-content/uploads/2023/01/Masaje-Holistico-scaled.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (116, 23, 'https://edifica.com.pe/blog/wp-content/uploads/2022/07/aspirar-limpiar-hogar-rapido.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (117, 32, 'https://www.liderlogo.es/wp-content/uploads/2023/02/diseno-web-768x512.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (118, 33, 'https://diagonalenglish.com/wp-content/uploads/2018/08/clases-de-ingles.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (119, 40, 'https://www.sesamehr.co/wp-content/uploads/2023/09/informe-actividades-recursos-humanos.webp');
+INSERT INTO public."FotosOfrecidos" VALUES (120, 29, 'https://vilaplana.com/wp-content/uploads/2022/04/descripcion-de-una-empresa-de-catering.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (121, 35, 'https://www.psicoactiva.com/wp-content/uploads/2023/07/dialogo-estrategico.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (122, 28, 'https://cashlogy.com/wp-content/uploads/2023/03/mejorar-contabilidad-de-la-empresa-768x310.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (90, 23, 'https://cleanlotus.com/wp-content/uploads/2020/09/142864537_s.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (123, 9, 'https://esdubai.com/wp-content/uploads/2023/06/Untitled-design-44.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (124, 42, 'https://patiodeautos.com/wp-content/uploads/2018/09/6-consejos-para-convertirte-en-un-mejor-mecanico-de-autos.jpg');
+INSERT INTO public."FotosOfrecidos" VALUES (125, 7, 'https://www.mipodo.com/wp-content/uploads/2019/03/electrodomesticos.png');
+INSERT INTO public."FotosOfrecidos" VALUES (126, 43, 'https://i0.wp.com/www.organizartemagazine.com/wp-content/uploads/2017/10/hogar-limpio-limpieza-limpiar-C%C3%B3mo-crear-el-plan-de-limpieza-de-una-casa.jpg?resize=768%2C912&ssl=1');
+INSERT INTO public."FotosOfrecidos" VALUES (129, 38, 'https://www.mipodo.com/wp-content/uploads/2019/03/electrodomesticos.png');
 
 
 --
@@ -720,6 +716,9 @@ INSERT INTO public."Historial" VALUES (34, 5, 16, '2024-11-02', NULL, NULL, NULL
 INSERT INTO public."Historial" VALUES (35, 5, 16, '2024-11-29', NULL, NULL, NULL, NULL, 1, NULL, 5);
 INSERT INTO public."Historial" VALUES (36, 3, 16, '2024-12-04', NULL, NULL, NULL, NULL, 1, NULL, NULL);
 INSERT INTO public."Historial" VALUES (37, 33, 16, '2024-12-04', NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO public."Historial" VALUES (38, 5, 16, '2024-12-05', NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO public."Historial" VALUES (39, 24, 16, '2024-12-05', NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO public."Historial" VALUES (40, 0, 16, '2024-12-05', NULL, NULL, NULL, NULL, 1, NULL, NULL);
 
 
 --
@@ -760,7 +759,6 @@ INSERT INTO public."Ofrecidos" VALUES (40, 18, 'Servicio de consultoría en recu
 INSERT INTO public."Ofrecidos" VALUES (41, 19, 'Clases de yoga y meditación para todos los niveles', 1, 'yoga clases meditación bienestar', 2300, 'Clases de Yoga');
 INSERT INTO public."Ofrecidos" VALUES (42, 20, 'Servicio de reparación de automóviles a domicilio', 2, 'reparación automóviles servicio domicilio', 5800, 'Reparación de Autos');
 INSERT INTO public."Ofrecidos" VALUES (43, 41, 'Servicio de limpieza a domicilio', 2, 'limpieza, hogar, mantenimiento', 50, 'Servicio General');
-INSERT INTO public."Ofrecidos" VALUES (50, 16, 'Maiu canta canciones de Karina la princesita', 45, 'gratis, cuerno, vicky, trauma', 0, 'Recital de cornuda');
 
 
 --
@@ -899,7 +897,7 @@ SELECT pg_catalog.setval('public."Estados_id_seq"', 5, true);
 -- Name: Favoritos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Favoritos_id_seq"', 59, true);
+SELECT pg_catalog.setval('public."Favoritos_id_seq"', 72, true);
 
 
 --
@@ -908,7 +906,7 @@ SELECT pg_catalog.setval('public."Favoritos_id_seq"', 59, true);
 -- Name: FotosOfrecidos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."FotosOfrecidos_id_seq"', 128, true);
+SELECT pg_catalog.setval('public."FotosOfrecidos_id_seq"', 129, true);
 
 
 --
@@ -926,7 +924,7 @@ SELECT pg_catalog.setval('public."Generos_id_seq"', 5, true);
 -- Name: Historial_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Historial_id_seq"', 37, true);
+SELECT pg_catalog.setval('public."Historial_id_seq"', 40, true);
 
 
 --
@@ -1154,7 +1152,7 @@ ALTER TABLE ONLY public."ZonaOfrecidos"
     ADD CONSTRAINT "idZonas_zonasId" FOREIGN KEY ("idZona") REFERENCES public."Zonas"(id) NOT VALID;
 
 
--- Completed on 2024-12-03 11:38:35
+-- Completed on 2024-12-04 08:56:58
 
 --
 -- PostgreSQL database dump complete

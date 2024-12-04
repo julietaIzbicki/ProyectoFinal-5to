@@ -54,6 +54,7 @@ export default class HistorialRepository {
   getByFecha = async (fecha) => {
     const client = new Client(DBConfig);
     let historiales = [];
+    console.log(fecha)
     try {
       await client.connect();
       const sql = `
@@ -62,6 +63,7 @@ export default class HistorialRepository {
       `;
       const values = [fecha];
       const result = await client.query(sql, values);
+      console.log(result);
       historiales = result.rows;
     } catch (error) {
       console.error('Error al consultar el historial por fecha:', error);
